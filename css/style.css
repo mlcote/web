@@ -16,7 +16,7 @@ form {
 	padding: 20px;
 }
 
-input, textarea {
+input, textarea, select {
 	width: 100%;
 	margin-bottom: 20px;
 	border: 1px solid rgb(227, 234, 240);
@@ -47,4 +47,8 @@ input[type="submit"] {
 input[type="submit"]:hover {
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0px 0px 4px 4px rgba(227, 234, 240, 0.5);
+}
+
+input:invalid {
+	border: 1px solid red;
 }
