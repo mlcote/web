@@ -13,7 +13,7 @@
 <body> [...] <a href="">Test</a>
 	<div id="contact">
 		<!-- <form action="mailto:marielea.cote@gmail.com" target="_blank" method="POST" enctype="text/plain"> -->
-		<form>
+		<form name="formulaire" onsubmit="return validerFormulaire()" method="GET">
 			<section>
 				<h2>Payment information</h2>
 				<p>
@@ -29,12 +29,12 @@
 					<!-- Pattern accepte les formats suivants: 
 						123-456-7890, 1234567890, (123) 456-7890, 123 456 7890, 123.456.7890, +91 (123) 456-7890 -->
 					<input type="text" id="telephone" name="telephone"
-						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" required>
+						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$">
 				</p>
 				<p>
 					<label for="courriel">Courriel</label><br>
 					<!-- Pattern ajouté pour une meilleure validation -->
-					<input type="email" id="courriel" name="courriel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+					<input type="email" id="courriel" name="courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 				</p>
 			</section>
 
@@ -55,7 +55,7 @@
 				<p>
 					<label for="province">Province</label><br>
 					<!-- Organisé selon les 2 options les plus probables, puis alphabétiquement -->
-					<select id="province" name="province" required>
+					<select id="province" name="province">
 						<option value="" selected disabled>Sélectionnez
 							votre province</option>
 						<option value="QC">Québec</option>
@@ -79,9 +79,10 @@
 				<p>
 					<label for="codepostal">Code postal</label>
 					<!-- Vérification stricte pour un code postal canadien, acceptant les minuscules -->
-					<input type="text" id="codepostal" name="codepostal" required
+					<!-- <input type="text" id="codepostal" name="codepostal" required
 						pattern="[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]"
-						title="Veuillez entrer un code postal canadien valide.">
+						title="Veuillez entrer un code postal canadien valide."> -->
+					<input type="text" id="codepostal" name="codepostal">
 				</p>
 			</section>
 
@@ -93,6 +94,42 @@
 		</form>
 	</div>
 	<!-- <script src="/js/script.js"></script> -->
+	<script type="text/javascript">
+		const setCookie = (cname, cvalue, exdays) => {
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			const expiration = "expires=" + d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expiration + ";path=/;SameSite=None;Secure";
+		}
+
+		const getCookie = (cname) => {
+			const name = cname + "=";
+			const decodedCookie = decodeURIComponent(document.cookie);
+			const cookieArray = decodedCookie.split(";");
+			/* ML - See if there's a more efficient way to do this */
+			for (let i = 0; i < cookieArray.length; i++) {
+				let ck = cookieArray[i];
+				while (ck.charAt(0) == " ") {
+					ck = ck.substring(1);
+				}
+				if (ck.indexOf(name) == 0) {
+					return ck.substring(name.length, ck.length);
+				}
+			}
+		}
+
+		console.log(decodeURIComponent(document.cookie));
+
+		function validerFormulaire() {
+			const form = document.forms["formulaire"];
+			console.log(form.codepostal.value);
+			setCookie("codepostal", form.codepostal.value, 2);
+			console.log(decodeURIComponent(document.cookie));
+			if ([ABCEGHJ - NPRSTVXYabceghj - nprstv - z][0 - 9][ABCEGHJ - NPRSTV - Zabceghj - nprstv - z][0 - 9][ABCEGHJ - NPRSTV - Zabceghj - nprstv - z][0 - 9].test(form.codepostal.value)) {
+				console.log("valid postal code");			
+			}
+		}
+	</script>
 </body>
 
 </html>
