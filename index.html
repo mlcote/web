@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="icon" href="/favicon.ico" /> -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body> [...] <a href="">Test</a>
+	<div id="contact">
+		<!-- <form action="mailto:marielea.cote@gmail.com" target="_blank" method="POST" enctype="text/plain"> -->
+		<form name="formulaire" onsubmit="return validerFormulaire()" method="GET">
+			<section>
+				<h2>Payment information</h2>
+				<p>
+					<label for="prenom">Prénom</label><br>
+					<input type="text" id="prenom" name="prenom">
+				</p>
+				<p>
+					<label for="nom">Nom de famille</label><br>
+					<input type="text" id="nom" name="nom">
+				</p>
+				<p>
+					<label for="telephone">Téléphone</label><br>
+					<!-- Pattern accepte les formats suivants: 
+						123-456-7890, 1234567890, (123) 456-7890, 123 456 7890, 123.456.7890, +91 (123) 456-7890 -->
+					<input type="text" id="telephone" name="telephone"
+						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$">
+				</p>
+				<p>
+					<label for="courriel">Courriel</label><br>
+					<!-- Pattern ajouté pour une meilleure validation -->
+					<input type="email" id="courriel" name="courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+				</p>
+			</section>
+
+			<section>
+				<h2>Shipping Address</h2>
+				<p>
+					<label for="street1">Street</label>
+					<input type="text" id="street1" name="street1" pattern="">
+				</p>
+				<p>
+					<label for="street2">Street line 2</label>
+					<input type="text" id="street2" name="street2" pattern="">
+				</p>
+				<p>
+					<label for="ville">Ville</label>
+					<input type="text" id="ville" name="ville" pattern="">
+				</p>
+				<p>
+					<label for="province">Province</label><br>
+					<!-- Organisé selon les 2 options les plus probables, puis alphabétiquement -->
+					<select id="province" name="province">
+						<option value="" selected disabled>Sélectionnez
+							votre province</option>
+						<option value="QC">Québec</option>
+						<option value="ON">Ontario</option>
+						<option value="AB">Alberta</option>
+						<option value="BC">Colombie-Britannique</option>
+						<option value="PE">Île-du-Prince-Édouard
+						</option>
+						<option value="MB">Manitoba</option>
+						<option value="NB">Nouveau-Brunswick</option>
+						<option value="NS">Nouvelle-Écosse</option>
+						<option value="NU">Nunavut</option>
+						<option value="SK">Saskatchewan</option>
+						<option value="NL">Terre-Neuve-et-Labrador
+						</option>
+						<option value="NT">Territoires du Nord-Ouest
+						</option>
+						<option value="YT">Yukon</option>
+					</select>
+				</p>
+				<p>
+					<label for="codepostal">Code postal</label>
+					<!-- Vérification stricte pour un code postal canadien, acceptant les minuscules -->
+					<!-- <input type="text" id="codepostal" name="codepostal" required
+						pattern="[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]"
+						title="Veuillez entrer un code postal canadien valide."> -->
+					<input type="text" id="codepostal" name="codepostal">
+				</p>
+			</section>
+
+			<p>
+				<label for="instructions">Instructions supplémentaires</label><br>
+				<textarea id="instructions" name="instructions"></textarea>
+			</p>
+			<input type="submit" value="Envoyer">
+		</form>
+	</div>
+	<!-- <script src="/js/script.js"></script> -->
+	<script type="text/javascript">
+		const setCookie = (cname, cvalue, exdays) => {
+			const d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			const expiration = "expires=" + d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expiration + ";path=/;SameSite=None;Secure";
+		}
+
+		const getCookie = (cname) => {
+			const name = cname + "=";
+			const decodedCookie = decodeURIComponent(document.cookie);
+			const cookieArray = decodedCookie.split(";");
+			/* ML - See if there's a more efficient way to do this */
+			for (let i = 0; i < cookieArray.length; i++) {
+				let ck = cookieArray[i];
+				while (ck.charAt(0) == " ") {
+					ck = ck.substring(1);
+				}
+				if (ck.indexOf(name) == 0) {
+					return ck.substring(name.length, ck.length);
+				}
+			}
+		}
+
+		console.log(decodeURIComponent(document.cookie));
+
+		function validerFormulaire() {
+			const form = document.forms["formulaire"];
+			console.log(form.codepostal.value);
+			setCookie("codepostal", form.codepostal.value, 2);
+			console.log(decodeURIComponent(document.cookie));
+			if ([ABCEGHJ - NPRSTVXYabceghj - nprstv - z][0 - 9][ABCEGHJ - NPRSTV - Zabceghj - nprstv - z][0 - 9][ABCEGHJ - NPRSTV - Zabceghj - nprstv - z][0 - 9].test(form.codepostal.value)) {
+				console.log("valid postal code");			
+			}
+		}
+	</script>
+</body>
+
+</html>
