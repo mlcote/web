@@ -124,7 +124,7 @@
 
 			const regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
 			const str = getCookie(codepostal);
-
+			alert (str);
 			if (!str.match(regex)) {
 				form.codepostal.classList.add("invalide");
 			}
