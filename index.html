@@ -122,15 +122,19 @@
 			const form = document.forms["formulaire"];
 			setCookie("codepostal", form.codepostal.value, 2);
 
-			const regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
-			const str = getCookie(codepostal);
-			alert (str);
-			if (!str.match(regex)) {
-				form.codepostal.classList.add("invalide");
-			}
+			
 		}
-		
 
+		const regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
+		const str = getCookie("codepostal");
+
+		if (str.match(regex)) {
+			document.querySelector("#codepostal").classList.remove("invalide");
+		} else {
+			document.querySelector("#codepostal").classList.add("invalide");
+		}
+
+			
 	</script>
 </body>
 
