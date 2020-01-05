@@ -118,17 +118,19 @@
 			}
 		}
 
-		console.log(decodeURIComponent(document.cookie));
-
-		function validerFormulaire() {
+		const validerFormulaire = () => {
 			const form = document.forms["formulaire"];
-			console.log(form.codepostal.value);
 			setCookie("codepostal", form.codepostal.value, 2);
-			console.log(decodeURIComponent(document.cookie));
-			if ([ABCEGHJ - NPRSTVXYabceghj - nprstv - z][0 - 9][ABCEGHJ - NPRSTV - Zabceghj - nprstv - z][0 - 9][ABCEGHJ - NPRSTV - Zabceghj - nprstv - z][0 - 9].test(form.codepostal.value)) {
-				console.log("valid postal code");
+
+			const regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
+			const str = getCookie(codepostal);
+
+			if (!str.match(regex)) {
+				form.codepostal.classList.add("invalide");
 			}
 		}
+		
+
 	</script>
 </body>
 
