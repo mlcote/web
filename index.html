@@ -100,7 +100,7 @@
 			const d = new Date();
 			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
 			const expiration = "expires=" + d.toUTCString();
-			document.cookie = cname + "=" + cvalue + ";" + expiration + ";path=/;SameSite=None;Secure";
+			document.cookie = cname + "=" + cvalue + ";" + expiration + ";path=/;SameSite=None;Secure;Domain=mlcote.github.io";
 		}
 
 		const getCookie = (cname) => {
@@ -159,10 +159,6 @@
 		prepopuleFormulaire();
 
 
-
-
-
-		/* la valeur s'efface si submit valide*/
 
 	</script>
 </body>
