@@ -130,13 +130,19 @@
 			/* Code postal */
 			let str = form.codepostal.value;
 			let regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
-			let inputId = "#codepostal";
+			if (str.match(regex) || str === "") {
+				document.querySelector("#codepostal").classList.remove("invalide");
+			} else {
+				document.querySelector("#codepostal").classList.add("invalide");
+			}
+
 			// validerChamp(str, regex, inputId);
 
 			prepopuleFormulaire();
 
 		}
 
+		/* Doesn't seem to work - 405 not allowed */
 		const validerChamp = (str="", regex, inputId) => {
 			if (str.match(regex) || str === "") {
 				document.querySelector(inputId).classList.remove("invalide");
@@ -150,7 +156,7 @@
 			document.querySelector("#codepostal").value = getCookie("codepostal");
 		}
 
-
+		prepopuleFormulaire();
 
 
 
