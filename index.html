@@ -13,7 +13,7 @@
 <body> [...] <a href="">Test</a>
 	<div id="contact">
 		<!-- <form action="mailto:marielea.cote@gmail.com" target="_blank" method="POST" enctype="text/plain"> -->
-		<form name="formulaire" onsubmit="return validerFormulaire()" method="GET">
+		<form name="formulaire" onsubmit="return validerFormulaire()" method="POST">
 			<section>
 				<h2>Payment information</h2>
 				<p>
@@ -95,6 +95,7 @@
 	</div>
 	<!-- <script src="/js/script.js"></script> -->
 	<script type="text/javascript">
+
 		const setCookie = (cname, cvalue, exdays) => {
 			const d = new Date();
 			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -106,7 +107,9 @@
 			const name = cname + "=";
 			const decodedCookie = decodeURIComponent(document.cookie);
 			const cookieArray = decodedCookie.split(";");
+
 			/* ML - See if there's a more efficient way to do this */
+			/* ML - When you get the time, describe this to understand it */
 			for (let i = 0; i < cookieArray.length; i++) {
 				let ck = cookieArray[i];
 				while (ck.charAt(0) == " ") {
@@ -120,23 +123,40 @@
 
 		const validerFormulaire = () => {
 			const form = document.forms["formulaire"];
-			setCookie("codepostal", form.codepostal.value, 2);
 
-			
+			/* Mets les réponses en cookie pour garder les infos après avoir soumis le formulaire */
+			if (typeof form.codepostal.value !== 'undefined') { setCookie("codepostal", form.codepostal.value, 2); }
+
+			/* Code postal */
+			let regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
+			validerChamp(form.codepostal.value, regex, "#codepostal");
+
+			prepopuleFormulaire();
+
 		}
 
-		const regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
-		const str = getCookie("codepostal");
-
-		if (str.match(regex)) {
-			document.querySelector("#codepostal").classList.remove("invalide");
-		} else {
-			document.querySelector("#codepostal").classList.add("invalide");
+		const validerChamp = (str, regex, inputId) => {
+			if (str.match(regex) || !(str in window)) {
+				document.querySelector(inputId).classList.remove("invalide");
+			} else {
+				document.querySelector(inputId).classList.add("invalide");
+			}
 		}
 
-		document.querySelector("#codepostal").value = str;
 
-			
+		/* Remets les valeurs dans le formulaire */
+		const prepopuleFormulaire = () => {
+			document.querySelector("#codepostal").value = getCookie("codepostal");
+		}
+
+
+
+
+
+
+
+		/* la valeur s'efface si submit valide*/
+
 	</script>
 </body>
 
