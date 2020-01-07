@@ -125,24 +125,25 @@
 			const form = document.forms["formulaire"];
 
 			/* Mets les réponses en cookie pour garder les infos après avoir soumis le formulaire */
-			if (typeof form.codepostal.value !== 'undefined') { setCookie("codepostal", form.codepostal.value, 2); }
+			setCookie("codepostal", form.codepostal.value, 2);
 
 			/* Code postal */
+			let str = form.codepostal.value;
 			let regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
-			validerChamp(form.codepostal.value, regex, "#codepostal");
+			let inputId = "#codepostal";
+			validerChamp(str, regex, inputId);
 
 			prepopuleFormulaire();
 
 		}
 
-		const validerChamp = (str, regex, inputId) => {
-			if (str.match(regex) || !(str in window)) {
+		const validerChamp = (str="", regex, inputId) => {
+			if (str.match(regex) || str === "") {
 				document.querySelector(inputId).classList.remove("invalide");
 			} else {
 				document.querySelector(inputId).classList.add("invalide");
 			}
 		}
-
 
 		/* Remets les valeurs dans le formulaire */
 		const prepopuleFormulaire = () => {
