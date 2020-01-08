@@ -13,7 +13,7 @@
 <body> [...] <a href="">Test</a>
 	<div id="contact">
 		<!-- <form action="mailto:marielea.cote@gmail.com" target="_blank" method="POST" enctype="text/plain"> -->
-		<form name="formulaire" onsubmit="return validerFormulaire()" method="GET">
+		<form name="formulaire" onsubmit="javascript:void(0)">
 			<section>
 				<h2>Payment information</h2>
 				<p>
@@ -92,7 +92,7 @@
 				<label for="instructions">Instructions supplémentaires</label><br>
 				<textarea id="instructions" name="instructions"></textarea>
 			</p>
-			<input type="submit" value="Envoyer">
+			<button type="button" onclick="validerFormulaire()">Envoyer</button>
 		</form>
 	</div>
 	<!-- <script src="/js/script.js"></script> -->
