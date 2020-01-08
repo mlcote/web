@@ -44,15 +44,15 @@
 				<h2>Shipping Address</h2>
 				<p>
 					<label for="street1">Street</label>
-					<input type="text" id="street1" name="street1" >
+					<input type="text" id="street1" name="street1">
 				</p>
 				<p>
 					<label for="street2">Street line 2</label>
-					<input type="text" id="street2" name="street2" >
+					<input type="text" id="street2" name="street2">
 				</p>
 				<p>
 					<label for="ville">Ville</label>
-					<input type="text" id="ville" name="ville" >
+					<input type="text" id="ville" name="ville">
 				</p>
 				<p>
 					<label for="province">Province</label><br>
@@ -209,7 +209,7 @@
 			} else {
 				document.querySelector("#courriel").classList.add("invalide");
 			}
-			
+
 			/* Code postal */
 			str = form.codepostal.value;
 			regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
@@ -218,7 +218,7 @@
 			} else {
 				document.querySelector("#codepostal").classList.add("invalide");
 			}
-		
+
 			// validerChamp(str, regex, inputId);
 
 			prepopuleFormulaire();
@@ -238,32 +238,38 @@
 		/* Enlevé le domain, check if it works again */
 		/* the undefined thing doesn't work as is, resreach more typeof */
 		const prepopuleFormulaire = () => {
-			let str = getCookie("prenom");
-			document.querySelector("#prenom").value = getCookie("prenom");
-			
-			str = getCookie("nom");
-			document.querySelector("#nom").value = getCookie("nom");
-			
-			str = getCookie("telephone");
-			document.querySelector("#telephone").value = getCookie("telephone");
-			
-			str = getCookie("courriel");
-			document.querySelector("#courriel").value = getCookie("courriel");
-			
-			str = getCookie("street1");
-			document.querySelector("#street1").value = getCookie("street1");
-			
-			str = getCookie("street2");
-			document.querySelector("#street2").value = getCookie("street2");
-			
-			str = getCookie("ville");
-			document.querySelector("#ville").value = getCookie("ville");
-			
-			str = getCookie("codepostal");
-			document.querySelector("#codepostal").value = getCookie("codepostal");
-			
-			str = getCookie("instructions");
-			document.querySelector("#instructions").value = getCookie("instructions");
+			let formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "codepostal", "instructions"]
+
+			formArray.forEach(champ => document.querySelector(`#${champ}`).value = getCookie(champ));
+
+			// let str = getCookie("prenom");
+			// document.querySelector("#prenom").value = getCookie("prenom");
+
+			// str = getCookie("nom");
+			// document.querySelector("#nom").value = getCookie("nom");
+
+			// str = getCookie("telephone");
+			// document.querySelector("#telephone").value = getCookie("telephone");
+
+			// str = getCookie("courriel");
+			// document.querySelector("#courriel").value = getCookie("courriel");
+
+			// str = getCookie("street1");
+			// document.querySelector("#street1").value = getCookie("street1");
+
+			// str = getCookie("street2");
+			// document.querySelector("#street2").value = getCookie("street2");
+
+			// str = getCookie("ville");
+			// document.querySelector("#ville").value = getCookie("ville");
+
+			// str = getCookie("codepostal");
+			// document.querySelector("#codepostal").value = getCookie("codepostal");
+
+			// str = getCookie("instructions");
+			// document.querySelector("#instructions").value = getCookie("instructions");
+
+
 			/* Rajouter la condition d'attribut selected pour province */
 
 
