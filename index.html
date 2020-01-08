@@ -106,7 +106,6 @@
 		}
 
 		const getCookie = (cname) => {
-			console.log(cname);
 			const name = cname + "=";
 			const decodedCookie = decodeURIComponent(document.cookie);
 			const cookieArray = decodedCookie.split(";");
@@ -245,10 +244,8 @@
 			let formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "codepostal", "instructions"]
 
 			formArray.forEach(champ => {
-				let selecteur = "#" + champ;
-				document.querySelector(selecteur).value = getCookie(champ)
-				console.log(selecteur);
-				console.log(champ);
+				let valeurCookie = getCookie(champ);
+				document.querySelector(`#${champ}`).value = valeurCookie;
 			})
 
 			// let str = getCookie("prenom");
