@@ -28,13 +28,15 @@
 					<label for="telephone">Téléphone</label><br>
 					<!-- Pattern accepte les formats suivants: 
 						123-456-7890, 1234567890, (123) 456-7890, 123 456 7890, 123.456.7890, +91 (123) 456-7890 -->
-					<input type="text" id="telephone" name="telephone"
-						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$">
+					<!-- <input type="text" id="telephone" name="telephone"
+						pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"> -->
+					<input type="text" id="telephone" name="telephone">
 				</p>
 				<p>
 					<label for="courriel">Courriel</label><br>
 					<!-- Pattern ajouté pour une meilleure validation -->
-					<input type="email" id="courriel" name="courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+					<!-- <input type="email" id="courriel" name="courriel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> -->
+					<input type="email" id="courriel" name="courriel">
 				</p>
 			</section>
 
@@ -100,7 +102,7 @@
 			const d = new Date();
 			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
 			const expiration = "expires=" + d.toUTCString();
-			document.cookie = cname + "=" + cvalue + ";" + expiration + ";path=/;SameSite=None;Secure;Domain=mlcote.github.io";
+			document.cookie = cname + "=" + cvalue + ";" + expiration + ";path=/;SameSite=None;Secure;";
 		}
 
 		const getCookie = (cname) => {
@@ -121,7 +123,7 @@
 			}
 		}
 
-		/* Another getCookie function
+		/* Another getCookie function - see later
 		function getCookie(name)
     {
         var value = "; " + document.cookie;
@@ -134,8 +136,70 @@
 			const form = document.forms["formulaire"];
 
 			/* Mets les réponses en cookie pour garder les infos après avoir soumis le formulaire */
-			setCookie("codepostal", form.codepostal.value, 2);
+			const joursCookie = 2;
+			setCookie("prenom", form.prenom.value, joursCookie);
+			setCookie("nom", form.nom.value, joursCookie);
+			setCookie("telephone", form.telephone.value, joursCookie);
+			setCookie("courriel", form.courriel.value, joursCookie);
+			setCookie("street1", form.street1.value, joursCookie);
+			setCookie("street2", form.street2.value, joursCookie);
+			setCookie("ville", form.ville.value, joursCookie);
+			setCookie("province", form.province.value, joursCookie);
+			setCookie("codepostal", form.codepostal.value, joursCookie);
 
+			/* Prénom */
+			let str = form.prenom.value;
+			let regex = RegExp('^([A-Za-zÀ-ÖØ-öø-ÿ_\s\-]*)$');
+			if (str.match(regex) || str === "") {
+				document.querySelector("#prenom").classList.remove("invalide");
+			} else {
+				document.querySelector("#prenom").classList.add("invalide");
+			}
+			/* Nom */
+			let str = form.nom.value;
+			if (str.match(regex) || str === "") {
+				document.querySelector("#nom").classList.remove("invalide");
+			} else {
+				document.querySelector("#nom").classList.add("invalide");
+			}
+			/* Rue */
+			let str = form.street1.value;
+			if (str.match(regex) || str === "") {
+				document.querySelector("#street1").classList.remove("invalide");
+			} else {
+				document.querySelector("#street1").classList.add("invalide");
+			}
+			let str = form.street2.value;
+			if (str.match(regex) || str === "") {
+				document.querySelector("#street2").classList.remove("invalide");
+			} else {
+				document.querySelector("#street2").classList.add("invalide");
+			}
+			/* Rue */
+			let str = form.ville.value;
+			if (str.match(regex) || str === "") {
+				document.querySelector("#ville").classList.remove("invalide");
+			} else {
+				document.querySelector("#ville").classList.add("invalide");
+			}
+
+			/* Téléphone */
+			let str = form.telephone.value;
+			let regex = RegExp('^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$');
+			if (str.match(regex) || str === "") {
+				document.querySelector("#telephone").classList.remove("invalide");
+			} else {
+				document.querySelector("#telephone").classList.add("invalide");
+			}
+			/* Courriel */
+			let str = form.courriel.value;
+			let regex = RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$');
+			if (str.match(regex) || str === "") {
+				document.querySelector("#courriel").classList.remove("invalide");
+			} else {
+				document.querySelector("#courriel").classList.add("invalide");
+			}
+			
 			/* Code postal */
 			let str = form.codepostal.value;
 			let regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
@@ -144,7 +208,7 @@
 			} else {
 				document.querySelector("#codepostal").classList.add("invalide");
 			}
-
+		
 			// validerChamp(str, regex, inputId);
 
 			prepopuleFormulaire();
@@ -152,16 +216,45 @@
 		}
 
 		/* Doesn't seem to work - 405 not allowed */
-		const validerChamp = (str = "", regex, inputId) => {
-			if (str.match(regex) || str === "") {
-				document.querySelector(inputId).classList.remove("invalide");
-			} else {
-				document.querySelector(inputId).classList.add("invalide");
-			}
-		}
+		// const validerChamp = (str = "", regex, inputId) => {
+		// 	if (str.match(regex) || str === "") {
+		// 		document.querySelector(inputId).classList.remove("invalide");
+		// 	} else {
+		// 		document.querySelector(inputId).classList.add("invalide");
+		// 	}
+		// }
 
 		/* Remets les valeurs dans le formulaire */
+		/* Enlevé le domain, check if it works again */
 		const prepopuleFormulaire = () => {
+			let str = getCookie("prenom");
+			if (typeOf(str) !== undefined) {
+				document.querySelector("#prenom").value = getCookie("prenom");
+			}
+			let str = getCookie("nom");
+			if (typeOf(str) !== undefined) {
+				document.querySelector("#nom").value = getCookie("nom");
+			}
+			let str = getCookie("telephone");
+			if (typeOf(str) !== undefined) {
+				document.querySelector("#telephone").value = getCookie("telephone");
+			}
+			let str = getCookie("courriel");
+			if (typeOf(str) !== undefined) {
+				document.querySelector("#courriel").value = getCookie("courriel");
+			}
+			let str = getCookie("street1");
+			if (typeOf(str) !== undefined) {
+				document.querySelector("#street1").value = getCookie("street1");
+			}
+			let str = getCookie("street2");
+			if (typeOf(str) !== undefined) {
+				document.querySelector("#street2").value = getCookie("street2");
+			}
+			let str = getCookie("ville");
+			if (typeOf(str) !== undefined) {
+				document.querySelector("#ville").value = getCookie("ville");
+			}
 			let str = getCookie("codepostal");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#codepostal").value = getCookie("codepostal");
