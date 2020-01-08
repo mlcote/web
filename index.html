@@ -245,6 +245,7 @@
 
 			formArray.forEach(champ => {
 				let valeurCookie = getCookie(champ);
+				console.log(valeurCookie);
 				document.querySelector(`#${champ}`).value = valeurCookie;
 			})
 
