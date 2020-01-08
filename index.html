@@ -198,7 +198,7 @@
 
 			/* Téléphone */
 			str = form.telephone.value;
-			regex = RegExp('^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$');
+			regex = RegExp('^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$');
 			if (str.match(regex) || str === "") {
 				document.querySelector("#telephone").classList.remove("invalide");
 			} else {
