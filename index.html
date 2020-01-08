@@ -119,6 +119,8 @@
 				}
 				if (ck.indexOf(name) == 0) {
 					return ck.substring(name.length, ck.length);
+				} else {
+					return "";
 				}
 			}
 		}
@@ -184,11 +186,11 @@
 				document.querySelector("#ville").classList.add("invalide");
 			}
 			/* Instructions */
-			str = form.isntructions.value;
+			str = form.instructions.value;
 			if (str.match(regex) || str === "") {
-				document.querySelector("#isntructions").classList.remove("invalide");
+				document.querySelector("#instructions").classList.remove("invalide");
 			} else {
-				document.querySelector("#isntructions").classList.add("invalide");
+				document.querySelector("#instructions").classList.add("invalide");
 			}
 
 			/* Téléphone */
@@ -234,39 +236,37 @@
 
 		/* Remets les valeurs dans le formulaire */
 		/* Enlevé le domain, check if it works again */
+		/* the undefined thing doesn't work as is, resreach more typeof */
 		const prepopuleFormulaire = () => {
 			let str = getCookie("prenom");
-			if (str !== "undefined") {
-				document.querySelector("#prenom").value = getCookie("prenom");
-			}
+			document.querySelector("#prenom").value = getCookie("prenom");
+			
 			str = getCookie("nom");
-			if (str !== "undefined") {
-				document.querySelector("#nom").value = getCookie("nom");
-			}
+			document.querySelector("#nom").value = getCookie("nom");
+			
 			str = getCookie("telephone");
-			if (str !== "undefined") {
-				document.querySelector("#telephone").value = getCookie("telephone");
-			}
+			document.querySelector("#telephone").value = getCookie("telephone");
+			
 			str = getCookie("courriel");
-			if (str !== "undefined") {
-				document.querySelector("#courriel").value = getCookie("courriel");
-			}
+			document.querySelector("#courriel").value = getCookie("courriel");
+			
 			str = getCookie("street1");
-			if (str !== "undefined") {
-				document.querySelector("#street1").value = getCookie("street1");
-			}
+			document.querySelector("#street1").value = getCookie("street1");
+			
 			str = getCookie("street2");
-			if (str !== "undefined") {
-				document.querySelector("#street2").value = getCookie("street2");
-			}
+			document.querySelector("#street2").value = getCookie("street2");
+			
 			str = getCookie("ville");
-			if (str !== "undefined") {
-				document.querySelector("#ville").value = getCookie("ville");
-			}
+			document.querySelector("#ville").value = getCookie("ville");
+			
 			str = getCookie("codepostal");
-			if (str !== "undefined") {
-				document.querySelector("#codepostal").value = getCookie("codepostal");
-			}
+			document.querySelector("#codepostal").value = getCookie("codepostal");
+			
+			str = getCookie("instructions");
+			document.querySelector("#instructions").value = getCookie("instructions");
+			/* Rajouter la condition d'attribut selected pour province */
+
+
 		}
 
 		prepopuleFormulaire();
