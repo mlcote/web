@@ -106,6 +106,7 @@
 		}
 
 		const getCookie = (cname) => {
+			console.log(cname);
 			const name = cname + "=";
 			const decodedCookie = decodeURIComponent(document.cookie);
 			const cookieArray = decodedCookie.split(";");
@@ -154,7 +155,7 @@
 
 			/* Prénom */
 			let str = form.prenom.value;
-			let regex = RegExp('^([A-Za-zÀ-ÖØ-öø-ÿ_\s\-]*)$');
+			let regex = RegExp('^([A-Za-zÀ-ÖØ-öø-ÿ_\\s\\-]*)$');
 			if (str.match(regex) || str === "") {
 				document.querySelector("#prenom").classList.remove("invalide");
 			} else {
@@ -206,7 +207,7 @@
 			}
 			/* Courriel */
 			str = form.courriel.value;
-			regex = RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$');
+			regex = RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$');
 			if (str.match(regex) || str === "") {
 				document.querySelector("#courriel").classList.remove("invalide");
 			} else {
@@ -221,7 +222,7 @@
 			} else {
 				document.querySelector("#codepostal").classList.add("invalide");
 			}
-			debugger;
+
 			// validerChamp(str, regex, inputId);
 
 			
@@ -243,7 +244,12 @@
 		const prepopuleFormulaire = () => {
 			let formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "codepostal", "instructions"]
 
-			formArray.forEach(champ => document.querySelector(`#${champ}`).value = getCookie(champ));
+			formArray.forEach(champ => {
+				let selecteur = "#" + champ;
+				document.querySelector(selecteur).value = getCookie(champ)
+				console.log(selecteur);
+				console.log(champ);
+			})
 
 			// let str = getCookie("prenom");
 			// document.querySelector("#prenom").value = getCookie("prenom");
