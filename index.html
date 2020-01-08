@@ -146,6 +146,7 @@
 			setCookie("ville", form.ville.value, joursCookie);
 			setCookie("province", form.province.value, joursCookie);
 			setCookie("codepostal", form.codepostal.value, joursCookie);
+			setCookie("instructions", form.instructions.value, joursCookie);
 
 			/* Prénom */
 			let str = form.prenom.value;
@@ -156,44 +157,51 @@
 				document.querySelector("#prenom").classList.add("invalide");
 			}
 			/* Nom */
-			let str = form.nom.value;
+			str = form.nom.value;
 			if (str.match(regex) || str === "") {
 				document.querySelector("#nom").classList.remove("invalide");
 			} else {
 				document.querySelector("#nom").classList.add("invalide");
 			}
 			/* Rue */
-			let str = form.street1.value;
+			str = form.street1.value;
 			if (str.match(regex) || str === "") {
 				document.querySelector("#street1").classList.remove("invalide");
 			} else {
 				document.querySelector("#street1").classList.add("invalide");
 			}
-			let str = form.street2.value;
+			str = form.street2.value;
 			if (str.match(regex) || str === "") {
 				document.querySelector("#street2").classList.remove("invalide");
 			} else {
 				document.querySelector("#street2").classList.add("invalide");
 			}
 			/* Rue */
-			let str = form.ville.value;
+			str = form.ville.value;
 			if (str.match(regex) || str === "") {
 				document.querySelector("#ville").classList.remove("invalide");
 			} else {
 				document.querySelector("#ville").classList.add("invalide");
 			}
+			/* Instructions */
+			str = form.isntructions.value;
+			if (str.match(regex) || str === "") {
+				document.querySelector("#isntructions").classList.remove("invalide");
+			} else {
+				document.querySelector("#isntructions").classList.add("invalide");
+			}
 
 			/* Téléphone */
-			let str = form.telephone.value;
-			let regex = RegExp('^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$');
+			str = form.telephone.value;
+			regex = RegExp('^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$');
 			if (str.match(regex) || str === "") {
 				document.querySelector("#telephone").classList.remove("invalide");
 			} else {
 				document.querySelector("#telephone").classList.add("invalide");
 			}
 			/* Courriel */
-			let str = form.courriel.value;
-			let regex = RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$');
+			str = form.courriel.value;
+			regex = RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$');
 			if (str.match(regex) || str === "") {
 				document.querySelector("#courriel").classList.remove("invalide");
 			} else {
@@ -201,8 +209,8 @@
 			}
 			
 			/* Code postal */
-			let str = form.codepostal.value;
-			let regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
+			str = form.codepostal.value;
+			regex = RegExp('[ABCEGHJ-NPRSTVXYabceghj-nprstv-z][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] [0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]');
 			if (str.match(regex) || str === "") {
 				document.querySelector("#codepostal").classList.remove("invalide");
 			} else {
@@ -231,31 +239,31 @@
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#prenom").value = getCookie("prenom");
 			}
-			let str = getCookie("nom");
+			str = getCookie("nom");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#nom").value = getCookie("nom");
 			}
-			let str = getCookie("telephone");
+			str = getCookie("telephone");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#telephone").value = getCookie("telephone");
 			}
-			let str = getCookie("courriel");
+			str = getCookie("courriel");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#courriel").value = getCookie("courriel");
 			}
-			let str = getCookie("street1");
+			str = getCookie("street1");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#street1").value = getCookie("street1");
 			}
-			let str = getCookie("street2");
+			str = getCookie("street2");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#street2").value = getCookie("street2");
 			}
-			let str = getCookie("ville");
+			str = getCookie("ville");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#ville").value = getCookie("ville");
 			}
-			let str = getCookie("codepostal");
+			str = getCookie("codepostal");
 			if (typeOf(str) !== undefined) {
 				document.querySelector("#codepostal").value = getCookie("codepostal");
 			}
