@@ -44,15 +44,15 @@
 				<h2>Shipping Address</h2>
 				<p>
 					<label for="street1">Street</label>
-					<input type="text" id="street1" name="street1" pattern="">
+					<input type="text" id="street1" name="street1" >
 				</p>
 				<p>
 					<label for="street2">Street line 2</label>
-					<input type="text" id="street2" name="street2" pattern="">
+					<input type="text" id="street2" name="street2" >
 				</p>
 				<p>
 					<label for="ville">Ville</label>
-					<input type="text" id="ville" name="ville" pattern="">
+					<input type="text" id="ville" name="ville" >
 				</p>
 				<p>
 					<label for="province">Province</label><br>
@@ -236,35 +236,35 @@
 		/* Enlevé le domain, check if it works again */
 		const prepopuleFormulaire = () => {
 			let str = getCookie("prenom");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#prenom").value = getCookie("prenom");
 			}
 			str = getCookie("nom");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#nom").value = getCookie("nom");
 			}
 			str = getCookie("telephone");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#telephone").value = getCookie("telephone");
 			}
 			str = getCookie("courriel");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#courriel").value = getCookie("courriel");
 			}
 			str = getCookie("street1");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#street1").value = getCookie("street1");
 			}
 			str = getCookie("street2");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#street2").value = getCookie("street2");
 			}
 			str = getCookie("ville");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#ville").value = getCookie("ville");
 			}
 			str = getCookie("codepostal");
-			if (typeOf(str) !== undefined) {
+			if (str !== "undefined") {
 				document.querySelector("#codepostal").value = getCookie("codepostal");
 			}
 		}
