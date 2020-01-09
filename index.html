@@ -254,9 +254,10 @@
 				let nom = formArray[i];
 				console.log(nom);
 				let valeur = getCookie("nom");
-				let valeur = getCookie(nom);
+				let valeur2 = getCookie(nom);
 				console.log(valeur);
-				document.querySelector(`#${formArray[i]}`).value = valeur;
+				console.log(valeur2);
+				document.querySelector(`#${formArray[i]}`).value = valeur2;
 			}
 
 			// let str = getCookie("prenom");
