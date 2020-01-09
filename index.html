@@ -167,7 +167,7 @@
 			} else {
 				document.querySelector("#nom").classList.add("invalide");
 			}
-			
+
 			/* Rue */
 			str = form.street1.value;
 			if (str.match(regex) || str === "") {
@@ -224,7 +224,7 @@
 
 			// validerChamp(str, regex, inputId);
 
-			
+
 
 		}
 
@@ -249,8 +249,7 @@
 			// 	console.log(valeurCookie);
 			// 	document.querySelector(`#${champ}`).value = valeurCookie;
 			// })
-
-			for (let i; i < formArray.length; i++) {
+			for (let i = 0; i < formArray.length; i++) {
 				document.querySelector(`#${formArray[i]}`).value = getCookie(formArray[i]);
 			}
 
