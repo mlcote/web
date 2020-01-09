@@ -242,14 +242,17 @@
 		/* the undefined thing doesn't work as is, resreach more typeof */
 		const prepopuleFormulaire = () => {
 			let formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "codepostal", "instructions"]
-			let valeurCookie = ""
+			/* valeurCookie seems to break after first */
+			// formArray.forEach(champ => {
+			// 	console.log(champ);
+			// 	let valeurCookie = getCookie(champ);
+			// 	console.log(valeurCookie);
+			// 	document.querySelector(`#${champ}`).value = valeurCookie;
+			// })
 
-			formArray.forEach(champ => {
-				console.log(champ);
-				valeurCookie = getCookie(champ);
-				console.log(valeurCookie);
-				document.querySelector(`#${champ}`).value = valeurCookie;
-			})
+			for (let i; i < formArray.length; i++) {
+				document.querySelector(`#${formArray[i]}`).value = getCookie(formArray[i]);
+			}
 
 			// let str = getCookie("prenom");
 			// document.querySelector("#prenom").value = getCookie("prenom");
