@@ -249,8 +249,14 @@
 			// 	console.log(valeurCookie);
 			// 	document.querySelector(`#${champ}`).value = valeurCookie;
 			// })
+			console.log("called");
 			for (let i = 0; i < formArray.length; i++) {
-				document.querySelector(`#${formArray[i]}`).value = getCookie(formArray[i]);
+				let nom = formArray[i];
+				console.log(nom);
+				let valeur = getCookie("nom");
+				let valeur = getCookie(nom);
+				console.log(valeur);
+				document.querySelector(`#${formArray[i]}`).value = valeur;
 			}
 
 			// let str = getCookie("prenom");
