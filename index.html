@@ -238,53 +238,20 @@
 		// }
 
 		/* Remets les valeurs dans le formulaire */
-		/* Enlevé le domain, check if it works again */
-		/* the undefined thing doesn't work as is, resreach more typeof */
 		const prepopuleFormulaire = () => {
-			let formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "codepostal", "instructions"]
-			/* valeurCookie seems to break after first */
-			// formArray.forEach(champ => {
-			// 	console.log(champ);
-			// 	let valeurCookie = getCookie(champ);
-			// 	console.log(valeurCookie);
-			// 	document.querySelector(`#${champ}`).value = valeurCookie;
-			// })
-			console.log("called");
-			for (let i = 0; i < formArray.length; i++) {
-				document.querySelector(`#${formArray[i]}`).value = getCookie(formArray[i]);
-			}
+			const formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "codepostal", "instructions"]
 
-			// let str = getCookie("prenom");
-			//document.querySelector("#prenom").value = getCookie("prenom");
+			/* testing */
+			formArray.forEach(champ => {
+				document.querySelector(`#${champ}`).value = getCookie(champ);
+			})
 
-			// str = getCookie("nom");
-			//document.querySelector("#nom").value = getCookie("nom");
-
-			// str = getCookie("telephone");
-			// document.querySelector("#telephone").value = getCookie("telephone");
-
-			// str = getCookie("courriel");
-			// document.querySelector("#courriel").value = getCookie("courriel");
-
-			// str = getCookie("street1");
-			// document.querySelector("#street1").value = getCookie("street1");
-
-			// str = getCookie("street2");
-			// document.querySelector("#street2").value = getCookie("street2");
-
-			// str = getCookie("ville");
-			// document.querySelector("#ville").value = getCookie("ville");
-
-			// str = getCookie("codepostal");
-			// document.querySelector("#codepostal").value = getCookie("codepostal");
-
-			// str = getCookie("instructions");
-			// document.querySelector("#instructions").value = getCookie("instructions");
-
+			/* Works */
+			// for (let i = 0; i < formArray.length; i++) {
+			// 	document.querySelector(`#${formArray[i]}`).value = getCookie(formArray[i]);
+			// }
 
 			/* Rajouter la condition d'attribut selected pour province */
-
-
 		}
 
 		prepopuleFormulaire();
