@@ -133,7 +133,8 @@ const prepopuleFormulaire = () => {
 	// 	document.querySelector(`#${formArray[i]}`).value = getCookie(formArray[i]);
 	// }
 
-	/* Rajouter la condition d'attribut selected pour province */
+	/* Province*/
+	document.querySelector("#province").value = getCookie("province");
 }
 
 prepopuleFormulaire();
