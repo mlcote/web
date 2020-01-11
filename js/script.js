@@ -121,7 +121,7 @@ const validerFormulaire = () => {
 
 /* Remets les valeurs dans le formulaire \ partir des cookies */
 const prepopuleFormulaire = () => {
-	const formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "codepostal", "instructions"]
+	const formArray = ["prenom", "nom", "telephone", "courriel", "street1", "street2", "ville", "instructions", "codepostal", "instructions"]
 
 	/* Cleaner */
 	formArray.forEach(champ => {
@@ -133,8 +133,6 @@ const prepopuleFormulaire = () => {
 	// 	document.querySelector(`#${formArray[i]}`).value = getCookie(formArray[i]);
 	// }
 
-	/* Province*/
-	document.querySelector("#province").value = getCookie("province");
 }
 
 prepopuleFormulaire();
