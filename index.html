@@ -15,7 +15,83 @@
 	<!-- <link rel="stylesheet" type="text/css" href="css/form.css"> -->
 </head>
 
-<body> [...] <a href="">Test</a>
+<body>
+	<!-- Make a branch please -->
+
+
+
+
+	<!-- Don't forget to hide/show elements when on mobile -->
+	<!-- Look up what's up with the data-something tags --->
+	<!-- Breadcrumbs? -->
+	<section class="product-description">
+		<h1>
+			<div>
+				<img src="" alt="Sale">
+			</div>
+			<div>
+				Product title
+			</div>
+		</h1>
+		<div class="rating">
+			<div>
+				<!-- Stars + average & # of ratings -->
+				<!-- SVG for stars? Images?  -->
+				<!-- Pop-up when hover for detailed breakdown? + button/link read reviews -->
+			</div>
+			<div>
+				<!-- Button instead of link? -->
+				<a href="">Write a review</a>
+			</div>
+		</div>
+		<p class="featured">
+			Product description. <a href="">Add a link at the end?</a>
+		</p>
+		<div class="price">
+			<span>$60.35</span>
+			<span class="disclaimer">with free shipping on all orders over $50.</span>
+		</div>
+		<form class="product-form" method="POST" enctype="multipart/form-data">
+			<div class="product-option">
+				<label class="product-option-title">Color</label>
+				<!-- Hide radio button, make label pretty -->
+				<!-- Make these equal or same padding? -->
+				<input type="radio" value="charcoal" id="product-option-1" name="product-option" checked>
+				<label for="product-option-1" class="product-option-label">Charcoal</label>
+				<input type="radio" value="red" id="product-option-2" name="product-option">
+				<label for="product-option-2" class="product-option-label">Red</label>
+			</div>
+			<div class="product-quantity">
+				<label for="product-quantity">Quantity:</label>
+				<input type="text" id="product-quantity" name="product-quantity" type="number" pattern="[0-9]*" min="1" max="99"
+					value="1">
+			</div>
+			<div class="product-delivery-options">
+				<div>
+					<input type="radio" id="product-shipping-1" value="standard" name="product-shipping" checked>
+					<label for="product-shipping-1" class="product-shipping-label">Standard delivery (8-15 days)</label>
+				</div>
+				<div>
+					<input type="radio" id="product-shipping-2" value="standard" name="product-shipping">
+					<label for="product-shipping-2" class="product-shipping-label">Express delivery (2-3 days)
+						<div class=""></div>
+					</label>
+					<!-- Add link to the span in JS? -->
+					<span class="info">i
+						<!-- Add triangle with :after or new div? -->
+						<div class="tooltip">
+							Tooltip text
+						</div>
+					</span>
+				</div>
+			</div>
+			<input id="product-add-to-cart" class="button-main" type="submit" value="Add to cart">
+		</form>
+	</section>
+
+
+
+
 
 	<!-- General JS -->
 	<script src="js/script.js"></script>
