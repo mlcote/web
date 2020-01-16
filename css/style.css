@@ -28,3 +28,26 @@ body {
 	vertical-align: middle;
 	font-weight: bold;
 }
+
+.tabs {
+	display:flex;
+	border-bottom: 3px solid rgb(122, 26, 41);
+}
+
+.tab {
+	flex: 1;
+	text-align: center;
+	border-right: 1px solid rgb(90, 29, 39);
+}
+
+.tab:last-child {
+	border:none;
+}
+
+.tab a {
+	display: block;
+	padding: 5px 20px;
+	text-decoration: none;
+	color: rgb(51, 49, 49);
+	width: 100%;
+}
