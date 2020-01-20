@@ -1,4 +1,5 @@
 /* ====== Colors ====== */
+
 /* --main-color: rgb(122, 26, 41);
 	--side-color: rgb(90, 29, 39);
 	--main-dark: rgb(51, 49, 49);
@@ -6,12 +7,41 @@
 	--side-pale: rgb(233, 226, 225);
 	--main-accent: rgb(193, 224, 167); */
 
-
 /* ====== Global ====== */
 
 body {
 	font-family: 'Open Sans', Verdana, sans-serif;
 	background-color: rgb(240, 240, 240);
+	color: rgb(51, 49, 49);
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.6em;
+	font-weight: 600;
+}
+
+img {
+	font-size: 0.8rem;
+	font-weight: normal;
+	max-width: 100%;
+	height: auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+p {
+	margin: 1rem 0;
+}
+
+.icon {
+	height: 40px;
+	width: 40px;
+	display: inline-block;
 }
 
 .info {
@@ -30,7 +60,7 @@ body {
 }
 
 .tabs {
-	display:flex;
+	display: flex;
 	border-bottom: 3px solid rgb(122, 26, 41);
 }
 
@@ -41,7 +71,7 @@ body {
 }
 
 .tab:last-child {
-	border:none;
+	border: none;
 }
 
 .tab a {
@@ -50,4 +80,45 @@ body {
 	text-decoration: none;
 	color: rgb(51, 49, 49);
 	width: 100%;
+}
+
+.container {
+	margin: 2rem auto;
+	max-width: 1300px;
+}
+
+.disclaimer {
+	font-size: 0.8rem;
+	font-style: italic;
+}
+
+/* ====== Newsletter ====== */
+
+.subscribe-newsletter {
+	padding: 2rem;
+	background-color: rgb(233, 226, 225);
+	text-align: center;
+}
+
+.subscribe-newsletter form {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.newsletter-email {
+	max-width: 30rem;
+	display: block;
+	width: 100%;
+}
+
+.newsletter-email input {
+	width: 100%;
+}
+
+.newsletter-submit {
+	display: block;
+	width: auto;
+	margin-left: 20px;
 }
