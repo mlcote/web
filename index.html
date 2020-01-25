@@ -53,13 +53,12 @@
 				</div>
 				<form class="product-form" method="POST" enctype="multipart/form-data">
 					<div class="product-option">
-						<label class="product-option-title">Color</label>
-						<!-- Hide radio button, make label pretty -->
-						<!-- Make these equal or same padding? -->
+						<label class="product-option-title">Color:</label>
 						<input type="radio" value="charcoal" id="product-option-1" name="product-option" checked>
 						<label for="product-option-1" class="product-option-label">Charcoal</label>
 						<input type="radio" value="red" id="product-option-2" name="product-option">
 						<label for="product-option-2" class="product-option-label">Red</label>
+						
 					</div>
 					<div class="product-quantity">
 						<label for="product-quantity">Quantity:</label>
@@ -67,14 +66,18 @@
 							max="99" value="1">
 					</div>
 					<div class="product-delivery-options">
-						<div>
+						<div class="custom-radio">
+							<label for="product-shipping-1" class="product-shipping-label">
 							<input type="radio" id="product-shipping-1" value="standard" name="product-shipping" checked>
-							<label for="product-shipping-1" class="product-shipping-label">Standard delivery (8-15 days)</label>
+							<span class="custom-radio-button"></span>
+							Standard delivery (8-15 days)</label>
 						</div>
-						<div>
+						<div class="custom-radio">
+							<label for="product-shipping-2" class="product-shipping-label">
 							<input type="radio" id="product-shipping-2" value="standard" name="product-shipping">
-							<label for="product-shipping-2" class="product-shipping-label">Express delivery (2-3 days)
-								<div class=""></div>
+							<span class="custom-radio-button"></span>
+							Express delivery (2-3 days)
+								<div class="promotion-text">Get up to 15% and free shipping</div>
 							</label>
 							<!-- Add link to the span in JS? -->
 							<span class="info">i
