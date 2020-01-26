@@ -74,6 +74,7 @@ p {
 	text-align: center;
 	vertical-align: middle;
 	font-weight: bold;
+	position: relative;
 }
 
 .tabs {
@@ -174,9 +175,75 @@ p {
 
 .newsletter-email input[type="email"]:focus, input[type="text"]:focus  {
 	outline: none;
-	box-shadow: 0px 0px 10px rgb(51, 49, 49);
+	box-shadow: 0px 0px 10px rgba(51, 49, 49, 0.5);
 	border: 1px solid rgb(193, 224, 167);
 }
+
+/* ====== Tooltips ====== */
+
+.tooltip {
+	display: block;
+	z-index: 998;
+	position: absolute;
+	width: 260px;
+	bottom: 100%;
+	left: 50%;
+	background-color: rgb(255, 255, 255);
+	padding: 10px 20px;
+	box-shadow: 0px 0px 10px rgba(51, 49, 49, 0.5);
+	margin-left: -130px !important;
+	font-weight: normal;
+	color: rgb(51, 49, 49);
+	text-align: left;
+	border: 1px solid rgba(51, 49, 49, 0.4);
+	border-radius: 6px;
+}
+
+.tooltip-hidden {
+	display: none !important;
+}
+
+.tooltip p {
+ font-size: 0.8rem;
+ line-height: 1rem;
+ margin: 10px 0;
+}
+
+.tooltip::after {
+	content: " ";
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+	border-color: rgba(51, 49, 49, 0.5) transparent transparent transparent;
+	
+}
+
+.tooltip-pointer {
+	display: block;
+	z-index: 999;
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+}
+
+.tooltip-pointer::after {
+	content: " ";
+  position: absolute;
+	top: 100%; 
+	left: 50%;
+  margin-left: -9px;
+  border-width: 9px;
+  border-style: solid;
+	border-color: rgb(255, 255, 255) transparent transparent transparent;
+	margin-top: -1px;
+}
+
+
 
 /* ====== Inputs ====== */
 
@@ -194,7 +261,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover, input[type="submit"]:focus {
 	background-color: rgb(51, 49, 49);
-	box-shadow: 0px 0px 10px rgb(51, 49, 49);
+	box-shadow: 0px 0px 10px rgba(51, 49, 49, 0.5);
 	outline: none;
 }
 
@@ -321,12 +388,12 @@ input:focus+label {
 
 input:focus~.custom-radio-button {
 	font-weight: bold;
-	box-shadow: 0px 0px 5px rgb(51, 49, 49);
+	box-shadow: 0px 0px 5px rgba(51, 49, 49, 0.5);
 }
 
 a:focus {
 	outline: none;
-	box-shadow: 0px 0px 5px rgb(51, 49, 49);
+	box-shadow: 0px 0px 5px rgba(51, 49, 49, 0.5);
 }
 
 a:not(.product-tab-title):focus {
