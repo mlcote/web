@@ -243,6 +243,24 @@ p {
 	margin-top: -1px;
 }
 
+/* ====== Scrollbar ====== */
+/* Note: Very partial support, use is as an enhance */
+/* You could use overflow-y hidden/scroll, but it bumps the content and you need to leave it on touch devices */
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(51, 49, 49, 0.2);
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(150, 150, 150);
+	border-radius: 6px;
+	box-shadow:  0 0 6px rgb(51, 49, 49);
+}
 
 
 /* ====== Inputs ====== */
