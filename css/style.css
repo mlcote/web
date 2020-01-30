@@ -167,6 +167,14 @@ p {
 	margin-right: 10px;
 }
 
+.subscribe-newsletter form > div {
+	margin-bottom: 20px
+}
+
+.subscribe-newsletter .disclaimer {
+	margin-top: 0;
+}
+
 .newsletter-email input[type="email"] {
 	font-size: 16px;
 	height: 40px;
@@ -290,7 +298,6 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 	display: inline-block;
 }
 
-/* do the option toggle next */
 .product-form div {
 	margin: 1rem 0;
 }
@@ -322,12 +329,10 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 	margin-bottom: 10px;
 }
 
-
 input:focus+label {
 	font-weight: bold;
 	box-shadow: 0px 0px 5px rgb(51, 49, 49);
 }
-
 
 .product-option input:checked+label {
 	border: 2px solid rgb(51, 49, 49);
