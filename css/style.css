@@ -123,6 +123,10 @@ p {
 	font-style: normal;
 }
 
+.hidden-element {
+	display: none !important;
+}
+
 /* ====== Newsletter ====== */
 
 .subscribe-newsletter {
