@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title></title>
+	<title>Démo par Marie-Léa Côté</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <link rel="icon" href="/favicon.ico" /> -->
@@ -17,126 +17,155 @@
 
 <body>
 	<!-- Don't forget to hide/show elements when on mobile -->
-	<!-- Look up what's up with the data-something tags --->
+	<!-- Look up what's up with the data-something tags -->
 	<!-- Breadcrumbs? -->
 	<header>
-		<div class="mobile-menu-toggle">
-			<a href="#">
-				<span>Toggle menu</span>
-			</a>
-		</div>
-		<div class="logo">
-			<a href="#">
-				<!-- Look up how SVG works -->
-				<img src="" alt="Image of logo">
-				<!-- Screen readers? -->
-				<span class="hidden-element">Website name</span>
-			</a>
-		</div>
-		<div id="menu" data-menu>
-			<nav>
-				<div class="navigation">
-					<div class="quicksearch">
-						<span class="quicksearch-close">
-							<span class="hidden-element">close</span>
-							X
-						</span>
-						<form>
-							<fieldset>
-								<div class="form-field">
-									<label for="search-query">Search</label>
-									<input id="search-query" data-error-message="The search field cannot be empty." placeholder="Search" autocomplete="off">
-								</div>
-							</fieldset>
-						</form>
-						<section class="quicksearch-results"></section>
+		<div class="header-row">
+			<div class="mobile-menu-toggle">
+				<a href="#">
+					<span>Toggle menu</span>
+				</a>
+			</div>
+			<div class="logo">
+				<a href="#">
+					<!-- Look up how SVG works -->
+					<img src="https://via.placeholder.com/50x50" alt="Image of logo">
+					<!-- Screen readers? -->
+					<span class="hidden-element">Website name</span>
+				</a>
+			</div>
+			<div id="menu" data-menu>
+				<nav class="main-navigation">
+					<div class="navigation">
+						<div class="quicksearch">
+							<span class="quicksearch-close">
+								<span class="hidden-element">close</span>
+								X
+							</span>
+							<form>
+								<fieldset>
+									<div class="form-field">
+										<label for="search-query">Search</label>
+										<input id="search-query" data-error-message="The search field cannot be empty." placeholder="Search"
+											autocomplete="off">
+									</div>
+								</fieldset>
+							</form>
+							<section class="quicksearch-results"></section>
+						</div>
 					</div>
-				</div>
-				<ul class="navigation-list">
-					<li class="navigation-item">
-						<a class="has-submenu">
-							Products
-							<span class="expand-arrow"></span>
+					<ul class="navigation-list">
+						<li class="navigation-item">
+							<a class="has-submenu">
+								Products
+								<span class="expand-arrow" aria-hidden="true">v</span>
+							</a>
+							<div class="submenu" tabindex="-1">
+								<ul class="submenu-list">
+									<li class="submenu-item">
+										<a href="">All products</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Second option</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Third option</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="navigation-item">
+							<a class="has-submenu">
+								Explore
+								<span class="expand-arrow" aria-hidden="true">v</span>
+							</a>
+							<div class="submenu submenu-two-col is-open" tabindex="-1">
+								<ul class="submenu-list">
+									<li class="submenu-item">
+										<a href="">First option</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Second option</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Third option</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Second option</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Third option</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="navigation-item">
+							<a class="has-submenu">
+								About us
+								<span class="expand-arrow" aria-hidden="true">v</span>
+							</a>
+							<div class="submenu" tabindex="-1">
+								<ul class="submenu-list">
+									<li class="submenu-item">
+										<a href="">First option</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Second option</a>
+									</li>
+									<li class="submenu-item">
+										<a href="">Third option</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="navigation-item">
+							<a href="#">Contact us</a>
+						</li>
+					</ul>
+				</nav class="navigation">
+			</div>
+			<nav class="user-icons">
+				<ul>
+					<li>
+						<a href="#">
+							<img src="https://via.placeholder.com/50x50" alt="My account">
 						</a>
-						<div class="submenu" tabindex="-1">
-							<ul class="submenu-list">
-								<li class="submenu-item">
-									<a href="">All products</a>
-								</li>
-								<li class="submenu-item">
-									<a href="">Second option</a>
-								</li>
-								<li class="submenu-item">
-									<a href="">Third option</a>
-								</li>
-							</ul>
-						</div>
 					</li>
-					<li class="navigation-item">
-						<a class="has-submenu">
-							Explore
-							<span class="expand-arrow"></span>
+					<li>
+						<a href="#">
+							<img src="https://via.placeholder.com/50x50" alt="Search">
 						</a>
-						<div class="submenu-two-col" tabindex="-1">
-							<ul class="submenu-list">
-								<li class="submenu-item">
-									<a href="">First option</a>
-								</li>
-								<li class="submenu-item">
-									<a href="">Second option</a>
-								</li>
-								<li class="submenu-item">
-									<a href="">Third option</a>
-								</li>
-							</ul>
-						</div>
 					</li>
-					<li class="navigation-item">
-						<a class="has-submenu">
-							About up
-							<span class="expand-arrow"></span>
+					<li>
+						<a href="#">
+							<img src="https://via.placeholder.com/50x50" alt="Cart">
 						</a>
-						<div class="submenu" tabindex="-1">
-							<ul class="submenu-list">
-								<li class="submenu-item">
-									<a href="">First option</a>
-								</li>
-								<li class="submenu-item">
-									<a href="">Second option</a>
-								</li>
-								<li class="submenu-item">
-									<a href="">Third option</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li class="navigation-item">
-						<a href="#">Contact us</a>
+						<div id="cart-preview"></div>
 					</li>
 				</ul>
 			</nav>
+			<!-- <div class="dropdown is-open" id="quicksearch">
+				<div class="container">
+					<span class="close"></span>
+					<form>
+						<fieldset>
+							<div class="form-field">
+								<label for="quicksearch-query">Search</label>
+								<input id="quicksearch-query" data-error-message="The search field cannot be empty."
+									placeholder="Search" autocomplete="off">
+							</div>
+						</fieldset>
+					</form>
+					<section class="quicksearch-results"></section>
+				</div>
+			</div> -->
 		</div>
-		<nav class="user-icons">
-			<ul>
-				<li>
-					<a href="#">
-						<img src="" alt="My account">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="" alt="Search">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="" alt="Cart">
-					</a>
-					<div id="cart-preview"></div>
-				</li>
-			</ul>
-		</nav>
-		<!-- Add the two last divs -->
+		<div class="message-banner">
+			<div class="banner">
+				<strong>Here's an important message, or a special offer.</strong>
+				<a href="#">Learn more</a>
+			</div>
+		</div>
 	</header>
 	<div class="main-container">
 		<div class="product-spotlight">
@@ -178,8 +207,7 @@
 					</div>
 					<div class="product-quantity">
 						<label for="product-quantity">Quantity:</label>
-						<input type="text" id="product-quantity" name="product-quantity" type="number" pattern="[0-9]*" min="1"
-							max="99" value="1">
+						<input id="product-quantity" name="product-quantity" type="number" min="1" max="99" value="1">
 					</div>
 					<div class="product-delivery-options">
 						<div class="custom-radio">
@@ -204,7 +232,7 @@
 										eleifend nisl. Mauris sed vehicula diam. </p>
 									<p>Maecenas id consectetur lorem, ac fermentum odio. </p>
 								</div>
-									<div class="tooltip-pointer tooltip-hidden"></div>
+								<div class="tooltip-pointer tooltip-hidden"></div>
 							</span>
 
 
@@ -216,7 +244,7 @@
 										eleifend nisl. Mauris sed vehicula diam. </p>
 									<p>Maecenas id consectetur lorem, ac fermentum odio. </p>
 								</div>
-									<div class="tooltip-pointer tooltip-hidden"></div>
+								<div class="tooltip-pointer tooltip-hidden"></div>
 							</span>
 						</div>
 					</div>
@@ -225,28 +253,28 @@
 			</section>
 			<section class="product-images">
 				<figure>
-					<img src="" alt="" class="product-image-preview">
+					<img src="https://via.placeholder.com/50x50" alt="" class="product-image-preview">
 				</figure>
 				<!-- Thumbnails - click to change image, vertical view -->
 				<ul class="product-thumbnails">
 					<li class="product-thumbnail">
 						<a href="">
-							<img src="" alt="" class="product-thumbnail-image">
+							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
 						</a>
 					</li>
 					<li class="product-thumbnail">
 						<a href="">
-							<img src="" alt="" class="product-thumbnail-image">
+							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
 						</a>
 					</li>
 					<li class="product-thumbnail">
 						<a href="">
-							<img src="" alt="" class="product-thumbnail-image">
+							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
 						</a>
 					</li>
 					<li class="product-thumbnail">
 						<a href="">
-							<img src="" alt="" class="product-thumbnail-image">
+							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
 						</a>
 					</li>
 				</ul>
@@ -307,14 +335,14 @@
 							</p>
 						</div>
 						<div class="media">
-							<img src="" alt="">
+							<img src="https://via.placeholder.com/50x50" alt="">
 						</div>
 					</div>
 				</div>
 				<div class="tabs-content">
 					<div class="content-thirds">
 						<div class="content">
-							<img src="" alt="">
+							<img src="https://via.placeholder.com/50x50" alt="">
 							<h3>Content title</h3>
 							<p>
 								Tab content, usually a paragraph
