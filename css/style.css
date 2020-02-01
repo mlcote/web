@@ -45,6 +45,10 @@ a {
 	text-decoration: none;
 }
 
+header {
+	background-color: rgb(193, 224, 167);
+}
+
 .main-container {
 	max-width: 1300px;
 	margin: auto;
@@ -191,11 +195,14 @@ a {
 		text-align: center;
 		height: auto;
 		padding: 0;
+		font-size: 0;
+		line-height: 0;
 	}
 }
 
 .navigation-list {
 	display: inline-block;
+	float: none;
 }
 
 .navigation-item {
@@ -206,7 +213,8 @@ a {
 	display: inline-block;
 	padding: 0.75rem;
 	color: rgb(90, 29, 39);
-
+	font-size: 1rem;
+	line-height: 1rem;
 }
 
 .expand-arrow {
@@ -236,7 +244,7 @@ a {
 		padding: .5rem 1rem !important;
 		position: absolute;
 		text-align: left;
-		background-color: rgb(193, 224, 167);
+		background-color: rgb(233, 226, 225);
 	}
 }
 
