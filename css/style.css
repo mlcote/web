@@ -207,6 +207,8 @@ header {
 
 .navigation-item {
 	float: left;
+	cursor: pointer;
+	user-select: none;
 }
 
 .navigation-item a {
@@ -228,7 +230,13 @@ header {
 	outline: 0;
 }
 
-.submenu.is-open {
+/* .navigation-item:hover .submenu:not(.is-open), .navigation-item a:focus+.submenu, .submenu:focus {
+	display: block !important;
+	max-width: 300px;
+	left: auto;
+} */
+
+ .submenu.is-open {
 	display: block !important;
 	max-width: 300px;
 	left: auto;
@@ -241,10 +249,9 @@ header {
 
 @media screen and (min-width: 900px) {
 	.navigation-item .submenu {
-		padding: .5rem 1rem !important;
 		position: absolute;
 		text-align: left;
-		background-color: rgb(233, 226, 225);
+		background-color: rgb(250, 250, 250);
 	}
 }
 
@@ -262,8 +269,15 @@ header {
 	line-height: 1.2rem;
 	color: rgb(51, 49, 49);
 	width: 100%;
-	padding: .75rem 0;
+	padding: .75rem 1rem;
 }
+
+
+.submenu-item:hover a, .submenu-item a:focus  {
+	background-color: rgb(255, 255, 255);
+	outline: none;
+}
+
 
 .user-icons {
 	padding-left: .75rem;
