@@ -274,12 +274,12 @@ header {
 }
 
 .submenu-item:hover a, .submenu-item a:focus  {
-	background-color: rgb(255, 255, 255);
+	background-color: #eae0f5;
 	outline: none;
 }
 
 .navigation-item.is-open a:focus {
-	background-color: rgb(255, 255, 255);
+	background-color: #eae0f5;
 }
 
 .user-icons {
@@ -579,7 +579,7 @@ input:focus+label {
 
 .product-option input:checked+label {
 	border: 2px solid #5e2d91;
-	background-color: #ddccf0;
+	background-color: #eae0f5;
 	color: rgb(51, 49, 49);
 	margin: 0px 10px;
 }
