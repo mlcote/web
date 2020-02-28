@@ -1,4 +1,6 @@
-/* ====== Global ====== */
+/* ====== Main ====== */
+
+/* ------ Tags ------ */
 
 body {
 	font-family: 'Open Sans', Verdana, sans-serif;
@@ -39,11 +41,12 @@ header {
 	background-color: #5e2d91;
 }
 
+/* ------ General ------ */
+
 .main-container {
 	max-width: 1300px;
 	margin: auto;
 	padding: 20px 50px;
-	/* background-color: rgb(250, 250, 250); */
 }
 
 @media screen and (max-width: 900px) {
@@ -53,51 +56,6 @@ header {
 	}
 }
 
-.icon {
-	height: 40px;
-	width: 40px;
-	display: inline-block;
-}
-
-.info {
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	padding: 3px 0;
-	border: 2px solid #f63;
-	border-radius: 50%;
-	color: #f63;
-	font-size: 0.8em;
-	line-height: 0.8em;
-	text-align: center;
-	vertical-align: middle;
-	font-weight: bold;
-	position: relative;
-}
-
-.tabs {
-	display: flex;
-	border-bottom: 3px solid #f63;
-}
-
-.tab {
-	flex: 1;
-	text-align: center;
-	border-right: 1px solid rgb(51, 49, 49);
-}
-
-.tab:last-child {
-	border: none;
-}
-
-.tab a {
-	display: block;
-	padding: 5px 20px;
-	text-decoration: none;
-	color: rgb(51, 49, 49);
-	width: 100%;
-}
-
 .container {
 	margin: 2rem auto;
 	max-width: 1300px;
@@ -105,6 +63,12 @@ header {
 
 .content li {
 	margin-bottom: 10px;
+}
+
+.icon {
+	height: 40px;
+	width: 40px;
+	display: inline-block;
 }
 
 .disclaimer {
@@ -129,13 +93,124 @@ header {
 	display: none !important;
 }
 
+.promotion-text {
+	color: #f63;
+	font-weight: bold;
+	display: block;
+	font-size: 0.8em;
+}
+
+/* ====== Tooltips ====== */
+
+.info {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	padding: 3px 0;
+	border: 2px solid #f63;
+	border-radius: 50%;
+	color: #f63;
+	font-size: 0.8em;
+	line-height: 0.8em;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	position: relative;
+}
+
+.tooltip {
+	display: block;
+	z-index: 998;
+	position: absolute;
+	width: 260px;
+	bottom: 100%;
+	left: 50%;
+	background-color: rgb(255, 255, 255);
+	padding: 10px 20px;
+	box-shadow: 0px 0px 10px rgba(51, 49, 49, 0.5);
+	margin-left: -130px !important;
+	font-weight: normal;
+	color: rgb(51, 49, 49);
+	text-align: left;
+	border: 1px solid rgba(51, 49, 49, 0.4);
+	border-radius: 6px;
+}
+
+.tooltip-hidden {
+	display: none !important;
+}
+
+.tooltip p {
+	font-size: 0.8rem;
+	line-height: 1rem;
+	margin: 10px 0;
+}
+
+.tooltip::after {
+	content: " ";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 10px;
+	border-style: solid;
+	border-color: rgba(51, 49, 49, 0.5) transparent transparent transparent;
+}
+
+.tooltip-pointer {
+	display: block;
+	z-index: 999;
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+}
+
+.tooltip-pointer::after {
+	content: " ";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -9px;
+	border-width: 9px;
+	border-style: solid;
+	border-color: rgb(255, 255, 255) transparent transparent transparent;
+	margin-top: -1px;
+}
+
+/* ------ Onglets ------ */
+
+.tabs {
+	display: flex;
+	border-bottom: 3px solid #f63;
+}
+
+.tab {
+	flex: 1;
+	text-align: center;
+	border-right: 1px solid rgb(51, 49, 49);
+}
+
+.tab:last-child {
+	border: none;
+}
+
+.tab a {
+	display: block;
+	padding: 5px 20px;
+	text-decoration: none;
+	color: rgb(51, 49, 49);
+	width: 100%;
+}
+
 /* ====== Header ====== */
+
 .header-row {
 	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-	/* flex-flow: row wrap; */
 }
 
 .mobile-menu-toggle {
@@ -158,6 +233,8 @@ header {
 		width: 50%;
 	}
 }
+
+/* ------ Navigation ------ */
 
 #menu {
 	bottom: 0;
@@ -186,7 +263,6 @@ header {
 	background-color: rgb(250, 250, 250);
 	color: rgb(51, 49, 49) !important;
 }
-
 
 @media screen and (min-width: 900px) {
 	.main-navigation {
@@ -218,12 +294,20 @@ header {
 	line-height: 1rem;
 }
 
-
-
 .expand-arrow {
-	height: .5rem;
-	width: .5rem;
-	margin-left: .3rem;
+	height: .65rem;
+	width: .65rem;
+	margin-left: .2rem;
+}
+
+.expand-arrow svg {
+	width: .65rem;
+	height: auto;
+	fill: rgb(250, 250, 250);
+}
+
+.is-open .expand-arrow svg, .navigation-item:hover .expand-arrow svg {
+	fill: rgb(51, 49, 49);
 }
 
 .navigation-item .submenu {
@@ -231,13 +315,7 @@ header {
 	outline: 0;
 }
 
-/* .navigation-item:hover .submenu:not(.is-open), .navigation-item a:focus+.submenu, .submenu:focus {
-	display: block !important;
-	max-width: 300px;
-	left: auto;
-} */
-
- .submenu.is-open {
+.submenu.is-open {
 	display: block !important;
 	max-width: 300px;
 	left: auto;
@@ -245,7 +323,6 @@ header {
 
 .submenu-two-col {
 	column-count: 2;
-	column-gap: 1rem;
 }
 
 @media screen and (min-width: 900px) {
@@ -273,7 +350,7 @@ header {
 	padding: .75rem 1rem;
 }
 
-.submenu-item:hover a, .submenu-item a:focus  {
+.submenu-item:hover a, .submenu-item a:focus {
 	background-color: #eae0f5;
 	outline: none;
 }
@@ -281,6 +358,8 @@ header {
 .navigation-item.is-open a:focus {
 	background-color: #eae0f5;
 }
+
+/* ------ User menu ------ */
 
 .user-icons {
 	padding-left: .75rem;
@@ -310,6 +389,8 @@ header {
 	height: 30px;
 }
 
+/* ------ Banner ------ */
+
 .message-banner {
 	width: 100%;
 	background-color: #f63;
@@ -326,6 +407,7 @@ header {
 }
 
 /* ====== Quick search ====== */
+
 /* Return to this later */
 
 .main-navigation .quicksearch {
@@ -347,7 +429,6 @@ header {
 	right: -20px;
 	cursor: pointer;
 	font-weight: bold;
-	
 }
 
 #quicksearch {
@@ -397,20 +478,13 @@ header {
 	margin-left: 20px;
 }
 
-.promotion-text {
-	color: #f63;
-	font-weight: bold;
-	display: block;
-	font-size: 0.8em;
-}
-
 .product-shipping-label {
 	display: inline-block;
 	width: auto;
 	margin-right: 10px;
 }
 
-.subscribe-newsletter form > div {
+.subscribe-newsletter form>div {
 	margin-bottom: 20px
 }
 
@@ -424,82 +498,20 @@ header {
 	padding: 10px 15px;
 }
 
-.newsletter-email input[type="email"]:focus, input[type="text"]:focus  {
+.newsletter-email input[type="email"]:focus, input[type="text"]:focus {
 	outline: none;
 	box-shadow: 0px 0px 10px rgba(51, 49, 49, 0.5);
 	border: 1px solid #5e2d91;
 }
 
-/* ====== Tooltips ====== */
-
-.tooltip {
-	display: block;
-	z-index: 998;
-	position: absolute;
-	width: 260px;
-	bottom: 100%;
-	left: 50%;
-	background-color: rgb(255, 255, 255);
-	padding: 10px 20px;
-	box-shadow: 0px 0px 10px rgba(51, 49, 49, 0.5);
-	margin-left: -130px !important;
-	font-weight: normal;
-	color: rgb(51, 49, 49);
-	text-align: left;
-	border: 1px solid rgba(51, 49, 49, 0.4);
-	border-radius: 6px;
-}
-
-.tooltip-hidden {
-	display: none !important;
-}
-
-.tooltip p {
- font-size: 0.8rem;
- line-height: 1rem;
- margin: 10px 0;
-}
-
-.tooltip::after {
-	content: " ";
-  position: absolute;
-  top: 100%; 
-  left: 50%;
-  margin-left: -10px;
-  border-width: 10px;
-  border-style: solid;
-	border-color: rgba(51, 49, 49, 0.5) transparent transparent transparent;
-	
-}
-
-.tooltip-pointer {
-	display: block;
-	z-index: 999;
-	width: 0;
-	height: 0;
-	position: absolute;
-	bottom: 100%;
-	left: 50%;
-}
-
-.tooltip-pointer::after {
-	content: " ";
-  position: absolute;
-	top: 100%; 
-	left: 50%;
-  margin-left: -9px;
-  border-width: 9px;
-  border-style: solid;
-	border-color: rgb(255, 255, 255) transparent transparent transparent;
-	margin-top: -1px;
-}
-
 /* ====== Scrollbar ====== */
+
 /* Note: Very partial support, use is as an enhance */
+
 /* You could use overflow-y hidden/scroll, but it bumps the content and you need to leave it on touch devices */
 
 ::-webkit-scrollbar {
-  width: 20px;
+	width: 20px;
 }
 
 ::-webkit-scrollbar-track {
@@ -508,13 +520,23 @@ header {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(150, 150, 150, 0.5);
+	background: rgba(150, 150, 150, 0.5);
 	border-radius: 6px;
-	box-shadow:  0 0 8px rgb(51, 49, 49);
+	box-shadow: 0 0 8px rgb(51, 49, 49);
 }
 
+/* ====== Product form ====== */
 
-/* ====== Inputs ====== */
+.product-form {
+	width: auto;
+	display: inline-block;
+}
+
+.product-form div {
+	margin: 1rem 0;
+}
+
+/* ------ Inputs ------ */
 
 input[type="submit"] {
 	font-size: 16px;
@@ -534,18 +556,8 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 	outline: none;
 }
 
+/* ------ Custom option toggle ------ */
 
-/* ====== Product form ====== */
-.product-form {
-	width: auto;
-	display: inline-block;
-}
-
-.product-form div {
-	margin: 1rem 0;
-}
-
-/* Custom radio option toggle */
 .product-option label:not(.product-option-title) {
 	display: inline-block;
 	padding: 10px 15px;
@@ -553,9 +565,9 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 	border-radius: 6px;
 	border: 1px solid rgb(51, 49, 49);
 	margin: 2px 11px;
-	font-weight:bold;
+	font-weight: bold;
 	transition: background-color linear 0.2s;
-	color: rgb(100,100,100);
+	color: rgb(100, 100, 100);
 }
 
 .product-option label:not(.product-option-title):nth-child(3) {
@@ -596,8 +608,9 @@ input:focus+label {
 	width: 0;
 }
 
-/* Custom radio button appearance 
-	 Don't forget to hide the original */
+/* ------ Custom radio button ------ */
+
+/* Don't forget to hide the original */
 
 .custom-radio-button {
 	position: absolute;
@@ -615,7 +628,7 @@ input:focus+label {
 	cursor: pointer;
 }
 
-.custom-radio:hover input~.custom-radio-button  {
+.custom-radio:hover input~.custom-radio-button {
 	background-color: rgb(255, 255, 255);
 }
 
@@ -657,12 +670,3 @@ input:focus~.custom-radio-button {
 	font-weight: bold;
 	box-shadow: 0px 0px 5px rgba(51, 49, 49, 0.5);
 }
-
-/* a:focus {
-	outline: none;
-	box-shadow: 0px 0px 5px rgba(51, 49, 49, 0.5);
-} */
-
-/* a:not(.product-tab-title):focus {
-	padding: 0 5px;
-} */
