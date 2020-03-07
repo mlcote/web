@@ -1,3 +1,4 @@
+"use strict";
 // ====== Menu ====== 
 const menus = document.querySelectorAll(".has-submenu");
 menus.forEach(menu => {
