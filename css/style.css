@@ -218,10 +218,20 @@ header {
 
 .mobile-menu-toggle {
 	padding: 0 1rem;
-	height: 36px;
+	/* height: 36px; */
+	z-index: 600;
+	cursor: pointer;
 }
 
-.mobile-menu-toggle i {
+.mobile-menu-toggle a {
+	padding: 7px;
+	height: 40px;
+	display: block;
+}
+
+/* Icon method */
+
+/* .mobile-menu-toggle i {
 	color: rgb(250, 250, 250);
 	line-height: 36px;
 	font-size: 36px;
@@ -230,6 +240,46 @@ header {
 .mobile-menu-toggle i:hover, .mobile-menu-toggle i:focus {
 	color: #5e2d91;
 	background-color: rgb(250, 250, 250);
+} */
+
+/* Individual bars method */
+
+.mobile-menu-toggle .icon-bar {
+	display: block;
+	background-color: rgb(250, 250, 250);
+	width: 26px;
+	height: 3px;
+	border-radius: 1px;
+	position: relative;
+	top: 0;
+	transition: all .2s ease;
+	margin-top: 3px;
+}
+
+.mobile-menu-toggle .icon-bar+.icon-bar {
+	margin-top: 5px;
+}
+
+.mobile-menu-toggle a:hover, .mobile-menu-toggle a:focus {
+	background-color: rgb(250, 250, 250);
+}
+
+.mobile-menu-toggle a:hover .icon-bar, .mobile-menu-toggle a:focus .icon-bar {
+	background-color: #5e2d91;
+}
+
+.mobile-menu-toggle.toggled .icon-bar:nth-child(1) {
+	transform: rotate(45deg);
+	top: 8px;
+}
+
+.mobile-menu-toggle.toggled .icon-bar:nth-child(2) {
+	opacity: 0;
+}
+
+.mobile-menu-toggle.toggled .icon-bar:nth-child(3) {
+	transform: rotate(-45deg);
+	top: -8px;
 }
 
 @media screen and (min-width: 900px) {
@@ -241,8 +291,13 @@ header {
 /* ------ Logo ------ */
 
 .logo {
-	width: 50%;
+	width: 70%;
 	margin: 1rem auto;
+}
+
+.logo a:focus {
+	outline: rgb(250, 250, 250) dotted 1px;
+	outline-offset: 6px;
 }
 
 .logo img {
@@ -280,6 +335,12 @@ header {
 	height: 100%;
 }
 
+#menu.open-menu {
+	display: block;
+	/* z-index: 100; */
+	width: 100%;
+}
+
 @media screen and (min-width: 900px) {
 	#menu {
 		width: 60%;
@@ -290,19 +351,13 @@ header {
 	}
 }
 
-#menu.open-menu {
-	display: block;
-	z-index: 100;
-	width: 100%;
-}
-
 .main-navigation {
 	background-color: rgb(250, 250, 250);
 	padding: 1rem 2rem;
 	overflow-y: auto;
 	height: 100%;
 	display: block;
-	margin-top: 106px;
+	margin-top: 79px;
 }
 
 @media screen and (min-width: 900px) {
@@ -347,6 +402,11 @@ header {
 
 .navigation-item.is-open>a, .navigation-item a:hover, .navigation-item a:focus {
 	color: rgb(51, 49, 49);
+}
+
+.navigation-item a:focus {
+	outline: rgb(51, 49, 49) dotted 1px;
+	outline-offset: 3px;
 }
 
 @media screen and (min-width: 900px) {

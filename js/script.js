@@ -1,7 +1,16 @@
 "use strict";
-// ====== Menu ====== 
-const menus = document.querySelectorAll(".has-submenu");
-menus.forEach(menu => {
+
+// Mobile menu toggle
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+mobileMenuToggle.addEventListener("click", function () {
+	document.querySelector("#menu").classList.toggle("open-menu");
+	mobileMenuToggle.classList.toggle("toggled");
+})
+
+
+// ====== Navigation submenus ====== 
+const submenus = document.querySelectorAll(".has-submenu");
+submenus.forEach(menu => {
 
 	menu.addEventListener("click", function () {
 		clearMenuSelection(menu);
@@ -23,7 +32,7 @@ menus.forEach(menu => {
 
 // Closes opened submenus
 const clearMenuSelection = (menu) => {
-	menus.forEach(submenu => {
+	submenus.forEach(submenu => {
 		if (submenu != menu) {
 			submenu.nextElementSibling.classList.remove("is-open");
 			submenu.parentElement.classList.remove("is-open");
