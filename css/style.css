@@ -10,8 +10,14 @@ body {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	font-weight: bold;
+}
+
+@media screen and (min-width: 900px) {
+	h1 {
+		font-size: 2rem;
+	}
 }
 
 h2 {
@@ -613,6 +619,33 @@ header {
 	z-index: 50;
 	max-width: 50rem;
 }
+
+/* ====== Content ====== */
+
+/* ====== Product ====== */
+/* ------ Star rating ------ */
+.stars {
+	height: 24px;
+	display: flex;
+}
+.rating .stars i {
+	color: #5e2d91;
+	cursor: pointer;
+}
+.rating .stars i:first-child {
+	color: #f63;
+}
+
+.rating .stars:hover i  {
+	color: #f63;
+}
+
+.star:hover ~ .star{
+	color: rgb(180, 180, 180) !important;
+}
+
+
+
 
 /* ====== Newsletter ====== */
 
