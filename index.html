@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Démo par Marie-Léa Côté</title>
-	<!-- Settings -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Favicon & icons -->
-	<link rel="icon" href="favicon.ico" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
-	<!-- Global styles -->
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!-- Page-specific styles -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/form.css"> -->
+  <title>Démo par Marie-Léa Côté</title>
+  <!-- Settings -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon & icons -->
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+  <!-- Global styles -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Page-specific styles -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/form.css"> -->
 </head>
 
 <body>
-	<!-- Don't forget to hide/show elements when on mobile -->
-	<header>
-		<div class="header-row">
-			<div class="mobile-menu-toggle">
-				<a href="#">
-					<!-- <span>Toggle menu</span> -->
-					<!-- <i class="material-icons" alt="Toggle menu">menu</i> -->
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-			</div>
-			<div class="logo">
-				<a href="#">
-					<img src="images/logo.svg" alt="Logo">
-					<!-- Hidden info for screen readers -->
-					<span class="hidden-element">Front-end</span>
-				</a>
-			</div>
-			<div id="menu" class="" data-menu>
-				<nav class="main-navigation">
-					<div class="navigation">
-						<!-- <div class="quicksearch">
+  <!-- Don't forget to hide/show elements when on mobile -->
+  <header>
+    <div class="header-row">
+      <div class="mobile-menu-toggle">
+        <a href="#">
+          <!-- <span>Toggle menu</span> -->
+          <!-- <i class="material-icons" alt="Toggle menu">menu</i> -->
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+      </div>
+      <div class="logo">
+        <a href="#">
+          <img src="images/logo.svg" alt="Logo">
+          <!-- Hidden info for screen readers -->
+          <span class="hidden-element">Front-end</span>
+        </a>
+      </div>
+      <div id="menu" class="" data-menu>
+        <nav class="main-navigation">
+          <div class="navigation">
+            <!-- <div class="quicksearch">
 							<span class="quicksearch-close">
 								<span class="hidden-element">close</span>
 								X
@@ -56,138 +57,141 @@
 							</form>
 							<section class="quicksearch-results"></section>
 						</div> -->
-					</div>
-					<ul class="navigation-list" id="main-navigation-list">
-						<li class="navigation-item">
-							<a class="has-submenu" tabindex="0">
-								Products
-								<span class="expand-arrow" aria-hidden="true">
-									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 451.847 451.847" xml:space="preserve">
-										<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+          </div>
+          <ul class="navigation-list" id="main-navigation-list">
+            <li class="navigation-item">
+              <a class="has-submenu" tabindex="0">
+                Products
+                <span class="expand-arrow" aria-hidden="true">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 451.847 451.847" xml:space="preserve">
+                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
 										c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
-										c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
-										<!-- Fallback -->
-										v 
-									</svg>
-								</span>
-							</a>
-							<div class="submenu">
-								<ul class="submenu-list">
-									<li class="submenu-item">
-										<a href="">All products</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Second option</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Third option</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="navigation-item">
-							<a class="has-submenu" tabindex="0">
-								Explore
-								<span class="expand-arrow" aria-hidden="true">
-									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 451.847 451.847" xml:space="preserve">
-										<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+										c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z" />
+                    <!-- Fallback -->
+                    v
+                  </svg>
+                </span>
+              </a>
+              <div class="submenu">
+                <ul class="submenu-list">
+                  <li class="submenu-item">
+                    <a href="">All products</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Second option</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Third option</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navigation-item">
+              <a class="has-submenu" tabindex="0">
+                Explore
+                <span class="expand-arrow" aria-hidden="true">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 451.847 451.847" xml:space="preserve">
+                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
 										c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
-										c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
-										<!-- Fallback -->
-										v 
-									</svg>
-								</span>
-							</a>
-							<div class="submenu submenu-two-col">
-								<ul class="submenu-list">
-									<li class="submenu-item">
-										<a href="">First option</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Second option</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Third option</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Second option</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Third option</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="navigation-item">
-							<a class="has-submenu" tabindex="0">
-								About us
-								<span class="expand-arrow" aria-hidden="true">
-									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 451.847 451.847" xml:space="preserve">
-										<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+										c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z" />
+                    <!-- Fallback -->
+                    v
+                  </svg>
+                </span>
+              </a>
+              <div class="submenu submenu-two-col">
+                <ul class="submenu-list">
+                  <li class="submenu-item">
+                    <a href="">First option</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Second option</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Third option</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Second option</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Third option</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navigation-item">
+              <a class="has-submenu" tabindex="0">
+                About us
+                <span class="expand-arrow" aria-hidden="true">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 451.847 451.847" xml:space="preserve">
+                    <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
 										c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
-										c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
-										<!-- Fallback -->
-										v 
-									</svg>
-								</span>
-							</a>
-							<div class="submenu">
-								<ul class="submenu-list">
-									<li class="submenu-item">
-										<a href="">First option</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Second option</a>
-									</li>
-									<li class="submenu-item">
-										<a href="">Third option</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="navigation-item">
-							<a href="#">Contact us</a>
-						</li>
-					</ul>
-					<ul class="navigation-list">
-						<li class="navigation-item">
-							<a href="#">Find a store</a>
-						</li>
-						<li class="navigation-item">
-							<a href="#">Sign in</a>
-							or
-							<a href="#">Register</a>
-						</li>
-					
-					</ul>
-				</nav>
-			</div>
-			<nav class="user-icons">
-				<ul>
-					<li>
-						<a href="#">
-							<i class="material-icons" alt="Account">person</i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="material-icons" alt="Search">search</i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="material-icons" alt="Store locator">location_on</i>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="material-icons" alt="Shopping cart">shopping_cart</i>
-						</a>
-						<div id="cart-preview"></div>
-					</li>
-				</ul>
-			</nav>
-			<!-- <div class="dropdown is-open" id="quicksearch">
+										c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z" />
+                    <!-- Fallback -->
+                    v
+                  </svg>
+                </span>
+              </a>
+              <div class="submenu">
+                <ul class="submenu-list">
+                  <li class="submenu-item">
+                    <a href="">First option</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Second option</a>
+                  </li>
+                  <li class="submenu-item">
+                    <a href="">Third option</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navigation-item">
+              <a href="#">Contact us</a>
+            </li>
+          </ul>
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a href="#">Find a store</a>
+            </li>
+            <li class="navigation-item">
+              <a href="#">Sign in</a>
+              or
+              <a href="#">Register</a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+      <nav class="user-icons">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="material-icons" alt="Account">person</i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-icons" alt="Search">search</i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-icons" alt="Store locator">location_on</i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-icons" alt="Shopping cart">shopping_cart</i>
+            </a>
+            <div id="cart-preview"></div>
+          </li>
+        </ul>
+      </nav>
+      <!-- <div class="dropdown is-open" id="quicksearch">
 				<div class="container">
 					<span class="close"></span>
 					<form>
@@ -202,227 +206,229 @@
 					<section class="quicksearch-results"></section>
 				</div>
 			</div> -->
-		</div>
-		<div class="message-banner">
-			<strong>Here's an important message, or a special offer.</strong>
-			<a href="#">Learn more</a>
-		</div>
-	</header>
-	<div class="main-container">
-		<div class="product-spotlight">
-			<section class="product-description">
-				<h1>
-					<div class="icon">
-						<img src="images/badge-new.png" alt="Sale">
-					</div>
-					Product title
-				</h1>
-				<div class="rating">
-					<div class="stars">
-						<!-- Stars + average & # of ratings -->
-						<!-- SVG for stars? Images?  -->
-						<!-- custom radio button? label it, same as choices, see if label preceded ~ by check radio by nth child -->
-						<i class="material-icons star" alt="Store locator">star</i>
-						<i class="material-icons star" alt="Store locator">star</i>
-						<i class="material-icons star" alt="Store locator">star</i>
-						<i class="material-icons star" alt="Store locator">star</i>
-						<i class="material-icons star" alt="Store locator">star</i>
-						<!-- Pop-up when hover for detailed breakdown? + button/link read reviews -->
-						
-					</div>					
-					<div>
-						<!-- Button instead of link? -->
-						<a href="">Write a review</a>
-					</div>
-				</div>
-				<p class="featured">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="">Call to action!</a>
-				</p>
-				<div class="price">
-					<span>$60.35</span>
-					<span class="disclaimer">with free shipping on all orders over $50.</span>
-				</div>
-				<form class="product-form" method="POST" enctype="multipart/form-data">
-					<div class="product-option">
-						<label class="product-option-title">Color:</label>
-						<input type="radio" value="charcoal" id="product-option-1" name="product-option" checked>
-						<label for="product-option-1" class="product-option-label">Charcoal</label>
-						<input type="radio" value="red" id="product-option-2" name="product-option">
-						<label for="product-option-2" class="product-option-label">Red</label>
+    </div>
+    <div class="message-banner">
+      <strong>Here's an important message, or a special offer.</strong>
+      <a href="#">Learn more</a>
+    </div>
+  </header>
+  <div class="main-container">
+    <div class="product-spotlight">
+      <section class="product-description">
+        <h1>
+          <div class="icon">
+            <img src="images/badge-new.png" alt="Sale">
+          </div>
+          Product title
+        </h1>
+        <div class="rating">
+          <div class="stars">
+            <!-- Stars + average & # of ratings -->
+            <!-- SVG for stars? Images?  -->
+            <!-- custom radio button? label it, same as choices, see if label preceded ~ by check radio by nth child -->
+            <i class="material-icons star" alt="Store locator">star</i>
+            <i class="material-icons star" alt="Store locator">star</i>
+            <i class="material-icons star" alt="Store locator">star</i>
+            <i class="material-icons star" alt="Store locator">star</i>
+            <i class="material-icons star" alt="Store locator">star</i>
+            <!-- Pop-up when hover for detailed breakdown? + button/link read reviews -->
 
-					</div>
-					<div class="product-quantity">
-						<label for="product-quantity">Quantity:</label>
-						<input id="product-quantity" name="product-quantity" type="number" min="1" max="99" value="1">
-					</div>
-					<div class="product-delivery-options">
-						<div class="custom-radio">
-							<label for="product-shipping-1" class="product-shipping-label">
-								<input type="radio" id="product-shipping-1" value="standard" name="product-shipping" checked>
-								<span class="custom-radio-button"></span>
-								Standard delivery (8-15 days)</label>
-						</div>
-						<div class="custom-radio">
-							<label for="product-shipping-2" class="product-shipping-label">
-								<input type="radio" id="product-shipping-2" value="standard" name="product-shipping">
-								<span class="custom-radio-button"></span>
-								Express delivery (2-3 days)
-								<div class="promotion-text">Get up to 15% and free shipping</div>
-							</label>
+          </div>
+          <div>
+            <!-- Button instead of link? -->
+            <a href="">Write a review</a>
+          </div>
+        </div>
+        <p class="featured">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. <a href="">Call to action!</a>
+        </p>
+        <div class="price">
+          <span>$60.35</span>
+          <span class="disclaimer">with free shipping on all orders over $50.</span>
+        </div>
+        <form class="product-form" method="POST" enctype="multipart/form-data">
+          <div class="product-option">
+            <label class="product-option-title">Color:</label>
+            <input type="radio" value="charcoal" id="product-option-1" name="product-option" checked>
+            <label for="product-option-1" class="product-option-label">Charcoal</label>
+            <input type="radio" value="red" id="product-option-2" name="product-option">
+            <label for="product-option-2" class="product-option-label">Red</label>
 
-							<!-- Make a module for a tooltip -->
-							<span class="info">i
-								<div class="tooltip tooltip-hidden">
-									<p>Tooltip text</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id vestibulum ligula. Vivamus sed
-										eleifend nisl. Mauris sed vehicula diam. </p>
-									<p>Maecenas id consectetur lorem, ac fermentum odio. </p>
-								</div>
-								<div class="tooltip-pointer tooltip-hidden"></div>
-							</span>
+          </div>
+          <div class="product-quantity">
+            <label for="product-quantity">Quantity:</label>
+            <input id="product-quantity" name="product-quantity" type="number" min="1" max="99" value="1">
+          </div>
+          <div class="product-delivery-options">
+            <div class="custom-radio">
+              <label for="product-shipping-1" class="product-shipping-label">
+                <input type="radio" id="product-shipping-1" value="standard" name="product-shipping" checked>
+                <span class="custom-radio-button"></span>
+                Standard delivery (8-15 days)</label>
+            </div>
+            <div class="custom-radio">
+              <label for="product-shipping-2" class="product-shipping-label">
+                <input type="radio" id="product-shipping-2" value="standard" name="product-shipping">
+                <span class="custom-radio-button"></span>
+                Express delivery (2-3 days)
+                <div class="promotion-text">Get up to 15% and free shipping</div>
+              </label>
 
-						</div>
-					</div>
-					<input id="product-add-to-cart" class="button-main" type="submit" value="ADD TO CART">
-				</form>
-			</section>
-			<section class="product-images">
-				<figure>
-					<img src="https://via.placeholder.com/50x50" alt="" class="product-image-preview">
-				</figure>
-				<!-- Thumbnails - click to change image, vertical view -->
-				<ul class="product-thumbnails">
-					<li class="product-thumbnail">
-						<a href="">
-							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
-						</a>
-					</li>
-					<li class="product-thumbnail">
-						<a href="">
-							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
-						</a>
-					</li>
-					<li class="product-thumbnail">
-						<a href="">
-							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
-						</a>
-					</li>
-					<li class="product-thumbnail">
-						<a href="">
-							<img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
-						</a>
-					</li>
-				</ul>
-			</section>
-		</div>
-		<!-- These scroll down the page. See if you can change tabs instead? Mobile version changes layout? -->
-		<!-- Stay on top when scrolling past - class sticky-nav added when scrolled down? How? -->
-		<!-- See how you can re-organize this -->
-		<div class="product-tabs">
-			<article>
-				<ul class="tabs">
-					<li class="tab">
-						<a class="product-tab-title" href="#">Onglet</a>
-					</li>
-					<li class="tab">
-						<a class="product-tab-title" href="#">Onglet</a>
-					</li>
-					<li class="tab">
-						<a class="product-tab-title" href="#">Onglet</a>
-					</li>
-					<li class="tab">
-						<a class="product-tab-title" href="#">Onglet</a>
-					</li>
-					<li class="tab">
-						<a class="product-tab-title" href="#">Onglet</a>
-					</li>
-				</ul>
-				<div class="tabs-content">
-					<div class="content-full">
-						<div class="content">
-							<h2>Content title</h2>
-							<p>
-								Tab content, usually a paragraph
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="tabs-content">
-					<div class="content-split">
-						<div class="content">
-							<h2>Content title</h2>
-							<p>
-								Tab content, usually a paragraph
-							</p>
-							<ul>
-								<li>
-									Selling point 1
-								</li>
-								<li>
-									Selling point 2
-								</li>
-								<li>
-									Selling point 3
-								</li>
-							</ul>
-							<p>
-								Here's another paragraph!
-							</p>
-						</div>
-						<div class="media">
-							<img src="https://via.placeholder.com/50x50" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="tabs-content">
-					<div class="content-thirds">
-						<div class="content">
-							<img src="https://via.placeholder.com/50x50" alt="">
-							<h3>Content title</h3>
-							<p>
-								Tab content, usually a paragraph
-							</p>
-						</div>
-						<div class="content">
-							<h3>Content title</h3>
-							<p>
-								Tab content, usually a paragraph
-							</p>
-						</div>
-						<div class="content">
-							<h3>Content title</h3>
-							<p>
-								Tab content, usually a paragraph
-							</p>
-						</div>
-					</div>
-				</div>
-			</article>
-		</div>
-	</div>
-	<footer>
-		<div class="subscribe-newsletter">
-			<div class="container">
-				<h2>
-					Stay in touch
-				</h2>
-				<p>Subscribe to our newsletter!</p>
-				<form name="newsletter" onsubmit="javascript:void(0)">
-					<div class="newsletter-email">
-						<input type="email" id="newsletter-email" required>
-					</div>
-					<div class="newsletter-submit">
-						<input type="submit" value="SIGN UP">
-					</div>
-				</form>
-				<p class="disclaimer">
-					Don't worry, you can unsubscribe at any time.
-				</p>
-			</div>
-		</div>
-	</footer>
-	<!-- General JS -->
-	<script src="js/script.js"></script>
+              <!-- Make a module for a tooltip -->
+              <span class="info">i
+                <div class="tooltip tooltip-hidden">
+                  <p>Tooltip text</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id vestibulum ligula. Vivamus sed
+                    eleifend nisl. Mauris sed vehicula diam. </p>
+                  <p>Maecenas id consectetur lorem, ac fermentum odio. </p>
+                </div>
+                <div class="tooltip-pointer tooltip-hidden"></div>
+              </span>
+
+            </div>
+          </div>
+          <input id="product-add-to-cart" class="button-main" type="submit" value="ADD TO CART">
+        </form>
+      </section>
+      <section class="product-images">
+        <figure>
+          <img src="https://via.placeholder.com/50x50" alt="" class="product-image-preview">
+        </figure>
+        <!-- Thumbnails - click to change image, vertical view -->
+        <ul class="product-thumbnails">
+          <li class="product-thumbnail">
+            <a href="">
+              <img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
+            </a>
+          </li>
+          <li class="product-thumbnail">
+            <a href="">
+              <img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
+            </a>
+          </li>
+          <li class="product-thumbnail">
+            <a href="">
+              <img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
+            </a>
+          </li>
+          <li class="product-thumbnail">
+            <a href="">
+              <img src="https://via.placeholder.com/50x50" alt="" class="product-thumbnail-image">
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+    <!-- These scroll down the page. See if you can change tabs instead? Mobile version changes layout? -->
+    <!-- Stay on top when scrolling past - class sticky-nav added when scrolled down? How? -->
+    <!-- See how you can re-organize this -->
+    <div class="product-tabs">
+      <article>
+        <ul class="tabs">
+          <li class="tab">
+            <a class="product-tab-title" href="#">Onglet</a>
+          </li>
+          <li class="tab">
+            <a class="product-tab-title" href="#">Onglet</a>
+          </li>
+          <li class="tab">
+            <a class="product-tab-title" href="#">Onglet</a>
+          </li>
+          <li class="tab">
+            <a class="product-tab-title" href="#">Onglet</a>
+          </li>
+          <li class="tab">
+            <a class="product-tab-title" href="#">Onglet</a>
+          </li>
+        </ul>
+        <div class="tabs-content">
+          <div class="content-full">
+            <div class="content">
+              <h2>Content title</h2>
+              <p>
+                Tab content, usually a paragraph
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-content">
+          <div class="content-split">
+            <div class="content">
+              <h2>Content title</h2>
+              <p>
+                Tab content, usually a paragraph
+              </p>
+              <ul>
+                <li>
+                  Selling point 1
+                </li>
+                <li>
+                  Selling point 2
+                </li>
+                <li>
+                  Selling point 3
+                </li>
+              </ul>
+              <p>
+                Here's another paragraph!
+              </p>
+            </div>
+            <div class="media">
+              <img src="https://via.placeholder.com/50x50" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="tabs-content">
+          <div class="content-thirds">
+            <div class="content">
+              <img src="https://via.placeholder.com/50x50" alt="">
+              <h3>Content title</h3>
+              <p>
+                Tab content, usually a paragraph
+              </p>
+            </div>
+            <div class="content">
+              <h3>Content title</h3>
+              <p>
+                Tab content, usually a paragraph
+              </p>
+            </div>
+            <div class="content">
+              <h3>Content title</h3>
+              <p>
+                Tab content, usually a paragraph
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <footer>
+    <div class="subscribe-newsletter">
+      <div class="container">
+        <h2>
+          Stay in touch
+        </h2>
+        <p>Subscribe to our newsletter!</p>
+        <form name="newsletter" onsubmit="javascript:void(0)">
+          <div class="newsletter-email">
+            <input type="email" id="newsletter-email" required>
+          </div>
+          <div class="newsletter-submit">
+            <input type="submit" value="SIGN UP">
+          </div>
+        </form>
+        <p class="disclaimer">
+          Don't worry, you can unsubscribe at any time.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- General JS -->
+  <script src="js/script.js"></script>
 </body>
 
 </html>
